@@ -1,0 +1,99 @@
+@import "src/assets/mixins";
+
+:host {
+  display: flex;
+  flex-direction: row;
+}
+
+.card {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 465px;
+  width: 325px;
+
+  .header-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 110px;
+    min-height: 110px;
+    width: 100%;
+    background-image: url("http://localhost:4200/assets/images/header_bg.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 106px;
+    width: 100%;
+    background-image: url("http://localhost:4200/assets/images/N_small_full.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+  .title, .subtitle {
+    @include text-shadow;
+    font-family: Gwent, sans-serif;
+    color: #fff;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+
+  .content-background {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    width: 100%;
+    background-image: url("http://localhost:4200/assets/images/description_bg.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    .separator {
+      margin: 0 auto;
+    }
+  }
+
+  .content {
+    white-space: break-spaces;
+    text-align: justify;
+    padding: 10px 20px;
+  }
+
+  .footer-background-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 32px;
+    width: 100%;
+    background-image: url("http://localhost:4200/assets/images/description_bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .footer-background-2 {
+    background-image: url("http://localhost:4200/assets/images/footer_small_bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 12px;
+    width: 325px;
+  }
+
+  ::ng-deep b {
+    font-family: Gwent, sans-serif;
+    color: #600101;
+  }
+}

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
+import {FormBuilder, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,24 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'card-generator';
+
+  formBuilder = inject(FormBuilder);
+
+  cardForm: FormGroup;
+
+  constructor() {
+    this.cardForm = this.formBuilder.group({
+      mainFaction: ['n'],
+      secondFaction: [''],
+      frame: ['bronze'],
+      rarity: ['common'],
+      name: ['Card Name'],
+      categories: ['Human'],
+      description: ['<b>Stat:</b> Dexterity'],
+      keywords: ['<center><b>Keyword1</b>, <b>Keyword2</b></center>'],
+      flavourText: ['<i>Up for a round of Gwent?</i>']
+    });
+    // TODO: empty symbol (ㅤ)
+  }
+
 }

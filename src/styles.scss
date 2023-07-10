@@ -4,4 +4,36 @@ body {
   background: url("assets/images/site_bg.jpg");
   height: 100%;
   width: 100%;
+  position: relative;
+  padding-bottom: 144px;
+  margin: 0;
+}
+
+@font-face {
+  font-family: Gwent;
+  src: url('/assets/fonts/gwent_extrabold.ttf') format('truetype');
+}
+
+app-card-settings {
+  // background: url("assets/images/card_settings_bg.jpg");
+  border-image: url(/assets/images/card_settings_bg.jpg) 40 fill/40px stretch stretch;
+}
+
+h4 {
+  padding: 15px 0 3px 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: Gwent, fantasy;
+  font-size: 22px;
+  color: #600101;
+  margin: 0;
+}
+
+.icon-button {
+  background: #2b1e16;
+  border-image: url(/assets/images/button.png) 11 fill/11px stretch stretch;
+
+  &:hover, &.active {
+    border-image: url(/assets/images/button_active.png) 11 fill/11px stretch stretch;
+  }
 }

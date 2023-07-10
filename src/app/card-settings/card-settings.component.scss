@@ -1,6 +1,44 @@
-:host {
-  background: url("assets/images/card_settings_bg.jpg");
+.card-settings {
   display: grid;
-  height: 851px;
-  width: 928px;
+  grid-template-columns: 1fr 1fr;
+  padding: 45px 60px 60px;
+  gap: 40px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &-line {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.two-sections {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.button-list {
+  display: flex;
+  gap: 5px;
+}
+
+input, textarea {
+  font-family: arial, sans-serif;
+  padding: 0 10px;
+  font-size: 17px;
+  height: 35px;
+  border: 2px solid #2b1e16;
+  border-radius: 5px;
+  background: #e2cca9;
+}
+
+textarea {
+  resize: none;
+  height: 100%;
+  padding: 10px;
 }
