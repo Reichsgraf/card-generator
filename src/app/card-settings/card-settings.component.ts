@@ -34,8 +34,21 @@ export class CardSettingsComponent {
     this.setFormField('rarity', rarity.name);
   }
 
-  setFormField(fieldName: string, newValue: string) {
+  setFormField(fieldName: string, newValue: string | ArrayBuffer | null) {
     this.cardForm.get(fieldName)?.setValue(newValue);
+  }
+
+  uploadCardShirt(event: any) {
+    console.log(event);
+    const reader = new FileReader();
+    if (event.target.files?.length > 0) {
+      const file = event.target.files[0];
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        console.log(reader.result)
+        this.setFormField('image', reader.result);
+      };
+    }
   }
 
 }

@@ -1,0 +1,18 @@
+<div class="card card-shirt">
+  <div class="image" [style.background-image]="'url(' + cardForm.get('image')?.value + ')'"></div>
+
+  <img class="frame" [src]="cardForm.get('frame')?.value | getFrameImage" alt="">
+
+  <img class="power-banner" [src]="cardForm.get('mainFaction')?.value | getBannerImage" alt="">
+
+  <div class="power">{{cardForm.get('power')?.value}}</div>
+
+  <img class="rarity" [src]="cardForm.get('rarity')?.value | getRarityImage" alt="">
+
+  <img *ngIf="cardForm.get('armor')?.value"
+       class="armor-banner" [src]="'assets/images/armor_banner.png'" alt="">
+
+  <div class="armor">{{cardForm.get('armor')?.value}}</div>
+</div>
+
+

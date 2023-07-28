@@ -16,7 +16,7 @@
       <h4>Second Faction</h4>
       <div class="button-list">
         <ng-container *ngFor="let faction of factionList">
-          <app-icon-button *ngIf="faction.name !== 'n'" [item]="faction"
+          <app-icon-button *ngIf="faction.name !== 'N'" [item]="faction"
                            (click)="setSecondFaction(faction)"
                            [isActive]="faction.name === cardForm.get('secondFaction')?.value">
           </app-icon-button>
@@ -49,7 +49,29 @@
         </div>
       </div>
     </div>
+
+    <div class="stat-line">
+      <div class="stat-block">
+        <img [ngSrc]="'assets/images/power.png'" [height]="38" [width]="38" alt="">
+        <input type="text" formControlName="power">
+      </div>
+      <div class="stat-block">
+        <img [ngSrc]="'assets/images/armor.png'" [height]="38" [width]="38" alt="">
+        <input type="text" formControlName="armor">
+      </div>
+    </div>
+
+    <div class="button-list" [style.justify-content]="'space-between'">
+      <app-text-button [text]="'Load Image'" (click)="fileUpload.click()">
+        <input type="file" [style.display]="'none'" (change)="uploadCardShirt($event)" #fileUpload accept="image/*">
+      </app-text-button>
+
+      <app-text-button [text]="'Copy Tab Character'" [cdkCopyToClipboard]="'ㅤ'">
+      </app-text-button>
+    </div>
+
   </div>
+
   <div class="section">
     <div class="section-line">
       <h4>Card Name</h4>

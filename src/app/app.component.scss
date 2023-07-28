@@ -6,10 +6,13 @@
   gap: 60px;
 }
 
+.card-content {
+  display: flex;
+  flex-direction: row;
+}
+
 .footer {
   color: #555;
-  bottom: 0;
-  position: absolute;
   text-align: center;
   margin: 40px;
 

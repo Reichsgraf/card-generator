@@ -7,7 +7,14 @@ import { IconButtonComponent } from './icon-button/icon-button.component';
 import { TextButtonComponent } from './text-button/text-button.component';
 import {NgOptimizedImage} from "@angular/common";
 import {ReactiveFormsModule} from "@angular/forms";
-import { CardComponent } from './card/card.component';
+import { CardContentComponent } from './card-content/card-content.component';
+import { CardShirtComponent } from './card-shirt/card-shirt.component';
+import { GetRarityImagePipe } from './_pipes/get-rarity-image.pipe';
+import { GetFrameImagePipe } from './_pipes/get-frame-image.pipe';
+import { GetBannerImagePipe } from './_pipes/get-banner-image.pipe';
+import {ClipboardModule} from '@angular/cdk/clipboard';
+import { GetFactionHeaderPipe } from './_pipes/get-faction-header.pipe';
+import { GetSubFactionHeaderPipe } from './_pipes/get-sub-faction-header.pipe';
 
 @NgModule({
   declarations: [
@@ -15,12 +22,19 @@ import { CardComponent } from './card/card.component';
     CardSettingsComponent,
     IconButtonComponent,
     TextButtonComponent,
-    CardComponent
+    CardContentComponent,
+    CardShirtComponent,
+    GetRarityImagePipe,
+    GetFrameImagePipe,
+    GetBannerImagePipe,
+    GetFactionHeaderPipe,
+    GetSubFactionHeaderPipe
   ],
   imports: [
     BrowserModule,
     NgOptimizedImage,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ClipboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

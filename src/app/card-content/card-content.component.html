@@ -1,8 +1,9 @@
-<div class="card"></div>
-
 <div class="card">
   <div class="header-background">
     <div class="header">
+      <img [src]="cardForm.get('mainFaction')?.value | getFactionHeader" alt="">
+      <img *ngIf="cardForm.get('secondFaction')?.value"
+           [src]="cardForm.get('secondFaction')?.value | getSubFactionHeader" alt="">
       <span class="title">{{cardForm.get('name')?.value}}</span>
       <span class="subtitle">{{cardForm.get('categories')?.value}}</span>
     </div>

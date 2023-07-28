@@ -14,10 +14,15 @@ export class AppComponent {
 
   constructor() {
     this.cardForm = this.formBuilder.group({
-      mainFaction: ['n'],
+      mainFaction: ['N'],
       secondFaction: [''],
       frame: ['bronze'],
       rarity: ['common'],
+
+      image: [null],
+      power: ['1'],
+      armor: [''],
+
       name: ['Card Name'],
       categories: ['Human'],
       description: ['<b>Stat:</b> Dexterity'],
