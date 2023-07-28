@@ -18,7 +18,7 @@
   </div>
 
   <ng-container *ngIf="cardForm.get('flavourText')?.value as flavorText">
-    <img [ngSrc]="'assets/images/divider.png'" [height]="3" [width]="323" alt="">
+    <img class="divider" [ngSrc]="'assets/images/divider.png'" [height]="3" [width]="323" alt="">
     <div class="footer-background-1">
       <div class="content" [innerHTML]="flavorText"></div>
     </div>

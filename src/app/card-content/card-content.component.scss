@@ -72,6 +72,11 @@
     padding: 10px 20px;
   }
 
+  .divider {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+  }
+
   .footer-background-1 {
     display: flex;
     flex-direction: column;
