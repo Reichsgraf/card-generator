@@ -9,20 +9,20 @@
     </div>
   </div>
   <div class="content-background">
-    <div class="content" [innerHTML]="cardForm.get('description')?.value" [style.height]="'100%'"></div>
+    <div class="content" [innerHTML]="cardForm.get('description')?.value" [style.margin-bottom]="'auto'"></div>
 
     <ng-container *ngIf="cardForm.get('keywords')?.value as keywords">
       <img class="separator" [ngSrc]="'assets/images/separator.png'" [height]="19" [width]="228" alt="">
       <div class="content" [innerHTML]="keywords"></div>
     </ng-container>
-  </div>
 
-  <ng-container *ngIf="cardForm.get('flavourText')?.value as flavorText">
-    <img class="divider" [ngSrc]="'assets/images/divider.png'" [height]="3" [width]="323" alt="">
-    <div class="footer-background-1">
-      <div class="content" [innerHTML]="flavorText"></div>
-    </div>
-  </ng-container>
+    <ng-container *ngIf="cardForm.get('flavourText')?.value as flavorText">
+      <img class="divider" [ngSrc]="'assets/images/divider.png'" [height]="3" [width]="323" alt="">
+      <div class="footer-background-1">
+        <div class="content" [innerHTML]="flavorText"></div>
+      </div>
+    </ng-container>
+  </div>
 
   <div class="footer-background-2"></div>
 </div>
