@@ -1,6 +1,7 @@
 {
   "name": "card-generator",
   "version": "0.0.0",
+  "homepage": "https://reichsgraf.github.io/card-generator/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
