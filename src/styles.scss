@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-  background: url("./assets/images/site_bg.jpg");
+  background: url("/assets/images/site_bg.jpg");
   height: 100%;
   width: 100%;
   position: relative;
@@ -11,16 +11,16 @@ body {
 
 @font-face {
   font-family: Gwent;
-  src: url('./assets/fonts/gwent_extrabold.ttf') format('truetype');
+  src: url('/assets/fonts/gwent_extrabold.ttf') format('truetype');
 }
 
 @font-face {
   font-family: mmc;
-  src: url('./assets/fonts/mmc_regular.ttf') format('truetype');
+  src: url('/assets/fonts/mmc_regular.ttf') format('truetype');
 }
 
 app-card-settings {
-  border-image: url("./assets/images/card_settings_bg.jpg") 40 fill/40px stretch stretch;
+  border-image: url("/assets/images/card_settings_bg.jpg") 40 fill/40px stretch stretch;
 }
 
 h4 {
@@ -40,6 +40,22 @@ h4 {
   height: 465px;
   width: 325px;
   position: relative;
+
+  .header-background {
+    background-image: url("/assets/images/header_bg.png");
+  }
+
+  .content-background {
+    background-image: url("/assets/images/description_bg.png");
+  }
+
+  .footer-background-1 {
+    background-image: url("/assets/images/description_bg.png");
+  }
+
+  .footer-background-2 {
+    background-image: url("/assets/images/footer_small_bg.png");
+  }
 }
 
 .button {
