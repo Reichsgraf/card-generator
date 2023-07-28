@@ -39,7 +39,6 @@ export class CardSettingsComponent {
   }
 
   uploadCardShirt(event: any) {
-    console.log(event);
     const reader = new FileReader();
     if (event.target.files?.length > 0) {
       const file = event.target.files[0];
