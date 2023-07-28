@@ -1,9 +1,11 @@
 <app-card-settings [cardForm]="cardForm"></app-card-settings>
 
-<div class="card-content">
+<div class="card-content" #card>
   <app-card-shirt [cardForm]="cardForm"></app-card-shirt>
   <app-card-content [cardForm]="cardForm"></app-card-content>
 </div>
+
+<app-text-button [text]="'Download'" (click)="download()"></app-text-button>
 
 <div class="footer">
   THIS WEBSITE IS NOT AFFILIATED WITH CD PROJEKT RED AND MADE IN ACCORDANCE WITH <a href="https://www.cdprojektred.com/en/fan-content">FAN CONTENT GUIDELINES</a><br>
