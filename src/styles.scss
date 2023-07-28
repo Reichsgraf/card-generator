@@ -20,7 +20,7 @@ body {
 }
 
 app-card-settings {
-  border-image: url(/assets/images/card_settings_bg.jpg) 40 fill/40px stretch stretch;
+  border-image: url("/assets/images/card_settings_bg.jpg") 40 fill/40px stretch stretch;
 }
 
 h4 {
@@ -50,10 +50,10 @@ h4 {
   cursor: pointer;
 
   background: #2b1e16;
-  border-image: url(/assets/images/button.png) 11 fill/11px stretch stretch;
+  border-image: url("/assets/images/button.png") 11 fill/11px stretch stretch;
 
   &:hover, &.active {
-    border-image: url(/assets/images/button_active.png) 11 fill/11px stretch stretch;
+    border-image: url("/assets/images/button_active.png") 11 fill/11px stretch stretch;
   }
 }
 
