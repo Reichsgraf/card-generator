@@ -49,4 +49,21 @@ export class CardSettingsComponent {
     }
   }
 
+  setSpellTemplate() {
+    this.cardForm.get('fontSize')?.setValue(14);
+
+    this.cardForm.get('name')?.setValue('Благословение');
+    this.cardForm.get('categories')?.setValue('1 уровень')
+    this.cardForm.get('description')?.setValue(
+      'ㅤ<b>Время накладвания:</b> 1 действие.\n' +
+      'ㅤ<b>Дистанция:</b> 30 футов.\n' +
+      'ㅤ<b>Компоненты:</b> В, С, М (капля святой воды).\n' +
+      'ㅤ<b>Длительность:</b> концентрация (до 1 минуты).\n' +
+      'ㅤВы благословляете до трёх существ на свой выбор в пределах дистанции. До окончания заклинания цель, совершая бросок атаки или спасбросок, может добавить d4 к результату броска.\n' +
+      'ㅤ<b>На высоких уровнях:</b> одно дополнительное целевое существо за каждый уровень ячейки выше первого.'
+    );
+    this.cardForm.get('keywords')?.setValue('<center><b>Школа Очарования</b></center>');
+    this.cardForm.get('flavourText')?.setValue('');
+  }
+
 }
