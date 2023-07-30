@@ -59,6 +59,10 @@
         <img [ngSrc]="'assets/images/armor.png'" [height]="38" [width]="38" alt="">
         <input type="text" formControlName="armor">
       </div>
+      <div class="stat-block">
+        <h4>Font Size</h4>
+        <input type="number" formControlName="fontSize">
+      </div>
     </div>
 
     <div class="button-list" [style.justify-content]="'space-between'">
@@ -96,6 +100,13 @@
     <div class="section-line">
       <h4>Flavour text</h4>
       <textarea formControlName="flavourText" [rows]="3"></textarea>
+    </div>
+
+    <div class="section-line">
+      <h4>Templates</h4>
+      <div>
+        <app-text-button [text]="'Spell'" (click)="setSpellTemplate()"></app-text-button>
+      </div>
     </div>
   </div>
 </div>
