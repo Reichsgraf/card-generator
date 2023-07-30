@@ -2,6 +2,18 @@
 
 .card {
   font-family: mmc, sans-serif;
+  border-radius: 10px;
+  overflow: hidden;
+
+  .frame {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
 
   .header-background {
     display: flex;

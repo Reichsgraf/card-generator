@@ -26,6 +26,7 @@ export class AppComponent {
       image: [null],
       power: ['1'],
       armor: [''],
+      provision: ['6'],
       fontSize: [16],
 
       name: ['Card Name'],

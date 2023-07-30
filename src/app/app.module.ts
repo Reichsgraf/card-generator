@@ -15,6 +15,8 @@ import { GetBannerImagePipe } from './_pipes/get-banner-image.pipe';
 import {ClipboardModule} from '@angular/cdk/clipboard';
 import { GetFactionHeaderPipe } from './_pipes/get-faction-header.pipe';
 import { GetSubFactionHeaderPipe } from './_pipes/get-sub-faction-header.pipe';
+import { GetProvisionBannerImagePipe } from './_pipes/get-provision-banner-image.pipe';
+import { GetProvisionFontSizePipe } from './_pipes/get-provision-font-size.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { GetSubFactionHeaderPipe } from './_pipes/get-sub-faction-header.pipe';
     GetFrameImagePipe,
     GetBannerImagePipe,
     GetFactionHeaderPipe,
-    GetSubFactionHeaderPipe
+    GetSubFactionHeaderPipe,
+    GetProvisionBannerImagePipe,
+    GetProvisionFontSizePipe
   ],
   imports: [
     BrowserModule,

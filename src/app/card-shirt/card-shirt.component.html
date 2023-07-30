@@ -2,7 +2,7 @@
   <img *ngIf="cardForm.get('image')?.value"
        class="image" [src]="cardForm.get('image')?.value" alt="">
 
-  <img class="frame" [src]="cardForm.get('frame')?.value | getFrameImage" alt="">
+  <img class="frame" [src]="cardForm.get('frame')?.value | getFrameImage:false" alt="">
 
   <img class="power-banner" [src]="cardForm.get('mainFaction')?.value | getBannerImage" alt="">
 
@@ -10,10 +10,20 @@
 
   <img class="rarity" [src]="cardForm.get('rarity')?.value | getRarityImage" alt="">
 
-  <img *ngIf="cardForm.get('armor')?.value"
-       class="armor-banner" [src]="'assets/images/armor_banner.png'" alt="">
+  <ng-container *ngIf="cardForm.get('armor')?.value">
+    <img class="armor-banner" [src]="'assets/images/armor_banner.png'" alt="">
 
-  <div class="armor">{{cardForm.get('armor')?.value}}</div>
+    <div class="armor">{{cardForm.get('armor')?.value}}</div>
+  </ng-container>
+
+  <ng-container *ngIf="cardForm.get('provision')?.value">
+    <img class="provision-head" [src]="'assets/images/provision_banner_head.png'" alt="">
+    <img class="provision-banner" [src]="cardForm.get('mainFaction')?.value | getProvisionBannerImage" alt="">
+
+    <div class="provision" [style.font-size]="cardForm.get('provision')?.value | getProvisionFontSize">
+      {{cardForm.get('provision')?.value}}
+    </div>
+  </ng-container>
 </div>
 
 
