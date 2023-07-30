@@ -12,6 +12,8 @@ export class AppComponent {
   formBuilder = inject(FormBuilder);
 
   @ViewChild('card') card!: ElementRef;
+  @ViewChild('shirt') shirt!: ElementRef;
+  @ViewChild('content') content!: ElementRef;
   cardForm: FormGroup;
 
   constructor() {
@@ -37,8 +39,11 @@ export class AppComponent {
     // Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
   }
 
-  download() {
-    htmlToImage.toPng(this.card.nativeElement)
+  download(elementName: string) {
+    let nativeElement;
+    nativeElement = this.getNativeElement(elementName);
+
+    htmlToImage.toPng(nativeElement)
       .then(canvas => {
         const downloadLink = document.createElement('a');
         downloadLink.href = canvas;
@@ -47,6 +52,18 @@ export class AppComponent {
         downloadLink.remove();
       })
       .catch();
+  }
+
+  getNativeElement(elementName: string) {
+    if (elementName === 'card') {
+      return this.card.nativeElement;
+    }
+    if (elementName === 'shirt') {
+      return this.shirt.nativeElement;
+    }
+    if (elementName === 'content') {
+      return this.content.nativeElement;
+    }
   }
 
 }

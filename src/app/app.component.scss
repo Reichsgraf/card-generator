@@ -11,10 +11,16 @@
   flex-direction: row;
 }
 
+.download-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 650px;
+}
+
 .footer {
   color: #555;
   text-align: center;
-  margin: 40px;
+  margin: 0 40px 40px;
 
   a {
     color: #888;
