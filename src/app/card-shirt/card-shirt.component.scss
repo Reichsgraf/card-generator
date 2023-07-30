@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 467px;
+  height: 468px;
   margin-top: -1px;
 
   .image {
@@ -42,7 +42,25 @@
     height: auto;
   }
 
-  .power, .armor {
+  .provision-head {
+    position: absolute;
+    z-index: 4;
+    top: 71%;
+    left: 79%;
+    width: 17%;
+    height: auto;
+  }
+
+  .provision-banner {
+    position: absolute;
+    z-index: 4;
+    top: 82.5%;
+    left: 79%;
+    width: 17%;
+    height: 15%;
+  }
+
+  .power, .armor, .provision {
     z-index: 4;
     font-size: 75px;
     display: flex;
@@ -68,6 +86,15 @@
     right: 0;
     height: 107.25px;
     width: 97.5px;
+  }
+
+  .provision {
+    bottom: 0;
+    right: 0;
+    margin: 0 13px 12px 0;
+    width: 55.25px;
+    height: 70.19px;
+    font-size: 65px;
   }
 
   .rarity {

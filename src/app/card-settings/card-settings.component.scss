@@ -19,7 +19,7 @@
 .stat-line {
   display: grid;
   margin: 0 auto;
-  grid-template-columns: repeat(3, 60px);
+  grid-template-columns: repeat(4, 60px);
   gap: 5px;
 
   .stat-block {
@@ -31,7 +31,7 @@
     h4 {
       height: 38px;
       padding: 0;
-      font-size: 20px;
+      font-size: 18px;
       text-align: center;
     }
 
