@@ -17,6 +17,8 @@ import { GetFactionHeaderPipe } from './_pipes/get-faction-header.pipe';
 import { GetSubFactionHeaderPipe } from './_pipes/get-sub-faction-header.pipe';
 import { GetProvisionBannerImagePipe } from './_pipes/get-provision-banner-image.pipe';
 import { GetProvisionFontSizePipe } from './_pipes/get-provision-font-size.pipe';
+import {ResponsiveModule} from "./_modules/responsive/responsive.module";
+import {ResponsiveService} from "./_modules/responsive/responsive.service";
 
 @NgModule({
   declarations: [
@@ -38,9 +40,13 @@ import { GetProvisionFontSizePipe } from './_pipes/get-provision-font-size.pipe'
     BrowserModule,
     NgOptimizedImage,
     ReactiveFormsModule,
-    ClipboardModule
+    ClipboardModule,
+    ResponsiveModule,
   ],
-  providers: [],
+  exports: [],
+  providers: [
+    ResponsiveService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

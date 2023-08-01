@@ -1,8 +1,27 @@
+:host {
+  :host-context(.mobile) & {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .card-settings {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   padding: 45px 60px 60px;
   gap: 40px;
+
+  :host-context(.desktop) & {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  :host-context(.tablet) & {
+    grid-template-columns: 1fr;
+  }
+
+  :host-context(.mobile) & {
+    grid-template-columns: 1fr;
+  }
 }
 
 .section {
@@ -14,6 +33,12 @@
     display: flex;
     flex-direction: column;
   }
+
+  :host-context(.tablet) &.icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
 }
 
 .stat-line {
