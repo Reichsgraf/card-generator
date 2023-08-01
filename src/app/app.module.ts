@@ -19,6 +19,7 @@ import { GetProvisionBannerImagePipe } from './_pipes/get-provision-banner-image
 import { GetProvisionFontSizePipe } from './_pipes/get-provision-font-size.pipe';
 import {ResponsiveModule} from "./_modules/responsive/responsive.module";
 import {ResponsiveService} from "./_modules/responsive/responsive.service";
+import { GetTypeImagePipe } from './_pipes/get-type-image.pipe';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {ResponsiveService} from "./_modules/responsive/responsive.service";
     GetFactionHeaderPipe,
     GetSubFactionHeaderPipe,
     GetProvisionBannerImagePipe,
-    GetProvisionFontSizePipe
+    GetProvisionFontSizePipe,
+    GetTypeImagePipe
   ],
   imports: [
     BrowserModule,

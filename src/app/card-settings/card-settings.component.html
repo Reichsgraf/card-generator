@@ -50,6 +50,18 @@
       </div>
     </div>
 
+    <div class="section-line">
+      <h4>Type</h4>
+      <div class="button-list">
+        <ng-container *ngFor="let type of typeList">
+          <app-icon-button *ngIf="type.name !== 'N'" [item]="type"
+                           (click)="setType(type)"
+                           [isActive]="type.name === cardForm.get('type')?.value">
+          </app-icon-button>
+        </ng-container>
+      </div>
+    </div>
+
     <div class="stat-line">
       <div class="stat-block">
         <img [ngSrc]="'assets/images/power.png'" [height]="38" [width]="38" alt="">
@@ -93,7 +105,7 @@
 
     <div class="section-line">
       <h4>Description</h4>
-      <textarea formControlName="description" [rows]="5"></textarea>
+      <textarea formControlName="description" [rows]="6"></textarea>
     </div>
 
     <div class="section-line">
