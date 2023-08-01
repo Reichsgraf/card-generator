@@ -6,7 +6,12 @@
 
   <img class="power-banner" [src]="cardForm.get('mainFaction')?.value | getBannerImage" alt="">
 
-  <div class="power">{{cardForm.get('power')?.value}}</div>
+  <ng-container *ngIf="cardForm.get('type')?.value === 'unit'; else otherType">
+    <div class="power">{{cardForm.get('power')?.value}}</div>
+  </ng-container>
+  <ng-template #otherType>
+    <img class="type" [src]="cardForm.get('type')?.value | getTypeImage" alt="">
+  </ng-template>
 
   <img class="rarity" [src]="cardForm.get('rarity')?.value | getRarityImage" alt="">
 
