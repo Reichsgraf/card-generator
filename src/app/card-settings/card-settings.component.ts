@@ -5,6 +5,7 @@ import {ListItem} from "../_interfaces/list-item";
 import {frameList} from "../_static/frame-list";
 import {rarityList} from "../_static/rarity-list";
 import {typeList} from "../_static/type-list";
+import {cardbackList} from "../_static/cardback-list";
 
 @Component({
   selector: 'app-card-settings',
@@ -19,6 +20,7 @@ export class CardSettingsComponent {
   frameList = frameList;
   rarityList = rarityList;
   typeList = typeList;
+  cardbackList = cardbackList;
 
   setMainFaction(faction: ListItem) {
     this.setFormField('mainFaction', faction.name);
@@ -38,6 +40,10 @@ export class CardSettingsComponent {
 
   setType(type: ListItem) {
     this.setFormField('type', type.name);
+  }
+
+  setCardback(cardback: ListItem) {
+    this.setFormField('cardback', cardback.name);
   }
 
   setFormField(fieldName: string, newValue: string | ArrayBuffer | null) {

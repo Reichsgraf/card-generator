@@ -9,6 +9,7 @@ export class IconButtonComponent {
 
   @Input() item!: { name: string, icon: string };
   @Input() isActive: boolean = false;
-  @Input() imageSize: number = 40;
+  @Input() imageWidth: number = 40;
+  @Input() imageHeight: number = 40;
 
 }

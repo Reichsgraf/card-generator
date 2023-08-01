@@ -29,7 +29,7 @@
         <h4>Frame</h4>
         <div class="button-list">
           <ng-container *ngFor="let frame of frameList">
-            <app-icon-button [item]="frame" [imageSize]="30"
+            <app-icon-button [item]="frame" [imageHeight]="30" [imageWidth]="30"
                              (click)="setFrame(frame)"
                              [isActive]="frame.name === cardForm.get('frame')?.value">
             </app-icon-button>
@@ -41,12 +41,24 @@
         <h4>Rarity</h4>
         <div class="button-list">
           <ng-container *ngFor="let rarity of rarityList">
-            <app-icon-button [item]="rarity" [imageSize]="25"
+            <app-icon-button [item]="rarity" [imageHeight]="25" [imageWidth]="25"
                              (click)="setRarity(rarity)"
                              [isActive]="rarity.name === cardForm.get('rarity')?.value">
             </app-icon-button>
           </ng-container>
         </div>
+      </div>
+    </div>
+
+    <div class="section-line">
+      <h4>Cardbacks</h4>
+      <div class="button-list cardback-list">
+        <ng-container *ngFor="let cardback of cardbackList">
+          <app-icon-button [item]="cardback" [imageHeight]="30" [imageWidth]="25"
+                           (click)="setCardback(cardback)"
+                           [isActive]="cardback.name === cardForm.get('cardback')?.value">
+          </app-icon-button>
+        </ng-container>
       </div>
     </div>
 

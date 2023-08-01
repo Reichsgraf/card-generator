@@ -78,6 +78,11 @@
   gap: 5px;
 }
 
+.cardback-list {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
 input, textarea {
   font-family: arial, sans-serif;
   padding: 0 10px;

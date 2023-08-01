@@ -1,10 +1,20 @@
 <div class="card card-shirt">
-  <img *ngIf="cardForm.get('image')?.value"
-       class="image" [src]="cardForm.get('image')?.value" alt="">
+  <div class="shirt-background-container">
+    <img *ngIf="cardForm.get('image')?.value" class="image" [src]="cardForm.get('image')?.value" alt="">
+  </div>
 
-  <img class="frame" [src]="cardForm.get('frame')?.value | getFrameImage:false" alt="">
+  <ng-container *ngIf="!cardForm.get('cardback')?.value; else cardback">
+    <img class="frame" [src]="cardForm.get('frame')?.value | getFrameImage:false" alt="">
+  </ng-container>
+  <ng-template #cardback>
+    <img class="frame" [src]="cardForm.get('cardback')?.value | getCardbackImage" alt="">
+  </ng-template>
 
-  <img class="power-banner" [src]="cardForm.get('mainFaction')?.value | getBannerImage" alt="">
+  <ng-container *ngIf="cardForm.get('type')?.value">
+    <img class="power-banner" [src]="cardForm.get('mainFaction')?.value | getBannerImage" alt="">
+
+    <img class="rarity" [src]="cardForm.get('rarity')?.value | getRarityImage" alt="">
+  </ng-container>
 
   <ng-container *ngIf="cardForm.get('type')?.value === 'unit'; else otherType">
     <div class="power">{{cardForm.get('power')?.value}}</div>
@@ -12,8 +22,6 @@
   <ng-template #otherType>
     <img class="type" [src]="cardForm.get('type')?.value | getTypeImage" alt="">
   </ng-template>
-
-  <img class="rarity" [src]="cardForm.get('rarity')?.value | getRarityImage" alt="">
 
   <ng-container *ngIf="cardForm.get('armor')?.value">
     <img class="armor-banner" [src]="'assets/images/armor_banner.png'" alt="">

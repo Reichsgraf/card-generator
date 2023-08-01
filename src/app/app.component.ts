@@ -28,6 +28,7 @@ export class AppComponent {
       armor: [''],
       provision: ['6'],
       fontSize: [16],
+      cardback: [''],
       type: ['unit'],
 
       name: ['Card Name'],
