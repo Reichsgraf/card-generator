@@ -1,22 +1,27 @@
-<app-card-settings [cardForm]="cardForm"></app-card-settings>
+<app-card-settings [style.grid-area]="'s'" [cardForm]="cardForm"></app-card-settings>
 
-<div class="card-content" #card>
-  <div #shirt>
-    <app-card-shirt [cardForm]="cardForm"></app-card-shirt>
+<div class="card-result" [style.grid-area]="'r'">
+  <div class="card-content" #card>
+    <div #shirt>
+      <app-card-shirt [cardForm]="cardForm"></app-card-shirt>
+    </div>
+    <div #content>
+      <app-card-content [cardForm]="cardForm"></app-card-content>
+    </div>
   </div>
-  <div #content>
-    <app-card-content [cardForm]="cardForm"></app-card-content>
+
+  <div class="download-buttons">
+    <app-text-button [text]="'Download Card Shirt'" (click)="download('shirt')"></app-text-button>
+    <app-text-button [text]="'Download'" (click)="download('card')"></app-text-button>
+    <app-text-button [text]="'Download Card Content'" (click)="download('content')"></app-text-button>
   </div>
 </div>
 
-<div class="download-buttons">
-  <app-text-button [text]="'Download Card Shirt'" (click)="download('shirt')"></app-text-button>
-  <app-text-button [text]="'Download'" (click)="download('card')"></app-text-button>
-  <app-text-button [text]="'Download Card Content'" (click)="download('content')"></app-text-button>
-</div>
-
-<div class="footer">
+<div class="footer" [style.grid-area]="'f'">
   THIS WEBSITE IS NOT AFFILIATED WITH CD PROJEKT RED AND MADE IN ACCORDANCE WITH <a href="https://www.cdprojektred.com/en/fan-content">FAN CONTENT GUIDELINES</a><br>
   ALL CONTENT FROM GWENT: THE WITCHER CARD GAME® IS PROPERTY OF CD PROJEKT RED<br><br>
   Based on generator made by <a href="https://gwentcard.online/">Kegian</a>
 </div>
+
+<ng-container *desktop></ng-container>
+<ng-container *mobile></ng-container>
