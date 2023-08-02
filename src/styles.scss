@@ -86,3 +86,34 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+
+table {
+  width: 100%;
+  margin-bottom: -16px;
+
+  tr {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  th, td {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    word-break: break-word;
+    padding: 0 3px;
+
+    &:not(&:last-of-type) {
+      border-right: 1px solid #600101;
+    }
+
+    &:not(&:first-of-type) {
+      border-left: 1px solid #600101;
+    }
+  }
+
+  th {
+    border-bottom: 2px solid #600101;
+  }
+}

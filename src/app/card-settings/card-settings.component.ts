@@ -78,4 +78,31 @@ export class CardSettingsComponent {
     this.cardForm.get('flavourText')?.setValue('');
   }
 
+  setCharacterTemplate() {
+    this.cardForm.get('fontSize')?.setValue(14);
+
+    this.cardForm.get('type')?.setValue('unit');
+    this.cardForm.get('power')?.setValue(4);
+    this.cardForm.get('armor')?.setValue(10);
+    this.cardForm.get('provision')?.setValue(0);
+
+    this.cardForm.get('name')?.setValue('Обыватель');
+    this.cardForm.get('categories')?.setValue('Средний гуманоид')
+    this.cardForm.get('description')?.setValue(
+      '<table>' +
+      '<tr><th><b>СИЛ</b></th><th><b>ЛОВ</th><th><b>ТЕЛ</b></th><th><b>ИНТ</b></th><th><b>МДР</b></th><th><b>ХАР</b></th></tr>' +
+      '<tr><td>10 (+0)</td><td>10 (+0)</td><td>10 (+0)</td><td>10 (+0)</td><td>10 (+0)</td><td>10 (+0)</td></tr>' +
+      '</table>\n' +
+      'ㅤ<b>Скорость:</b> 30 футов.\n' +
+      'ㅤ<b>Чувства:</b> Внимательность (10).\n' +
+      'ㅤ<b>Языки:</b> 1 любой (Общий).\n' +
+      'ㅤ<b>Опасность:</b> 0 (10 опыта).\n\n' +
+      '<b>Действия</b>\n' +
+      'ㅤ<b>Удар дубиной:</b> рукопашная атака оружием, +2 к попаданию, досягаемость 5 футов, 1 цель, урон: 1d4 дробящий.'
+    );
+    this.cardForm.get('keywords')?.setValue('');
+    this.cardForm.get('flavourText')?.setValue('');
+
+  }
+
 }
