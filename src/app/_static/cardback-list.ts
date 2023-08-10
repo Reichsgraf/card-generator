@@ -12,4 +12,6 @@ export const cardbackList: ListItem[] = [
   { name: 'magic', icon: 'assets/images/cardbacks/Magic.png'},
   { name: 'mahakam', icon: 'assets/images/cardbacks/Mahakam.png'},
   { name: 'wildhund', icon: 'assets/images/cardbacks/WildHunt.png'},
+  { name: 'elves', icon: 'assets/images/cardbacks/Elves.png'},
+  { name: 'dryad', icon: 'assets/images/cardbacks/Dryad.png'},
 ];
