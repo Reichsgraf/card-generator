@@ -116,6 +116,30 @@
     </div>
 
     <div class="section-line">
+      <h4>
+        Stats
+        <app-icon-button (click)="toggleStat()" [item]="factionList[1]"
+                         [imageHeight]="18" [imageWidth]="18"
+                         [isActive]="cardForm.get('showStats')?.value">
+        </app-icon-button>
+      </h4>
+      <div class="stats" *ngIf="cardForm.get('showStats')?.value">
+        <span>STR</span>
+        <span>DEX</span>
+        <span>CON</span>
+        <input formControlName="STR" type="number">
+        <input formControlName="DEX" type="number">
+        <input formControlName="CON" type="number">
+        <span>INT</span>
+        <span>WIS</span>
+        <span>CHA</span>
+        <input formControlName="INT" type="number">
+        <input formControlName="WIS" type="number">
+        <input formControlName="CHA" type="number">
+      </div>
+    </div>
+
+    <div class="section-line">
       <h4>Description</h4>
       <textarea formControlName="description" [rows]="6"></textarea>
     </div>

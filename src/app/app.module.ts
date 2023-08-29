@@ -38,7 +38,7 @@ import { GetCardbackImagePipe } from './_pipes/get-cardback-image.pipe';
     GetProvisionBannerImagePipe,
     GetProvisionFontSizePipe,
     GetTypeImagePipe,
-    GetCardbackImagePipe
+    GetCardbackImagePipe,
   ],
   imports: [
     BrowserModule,

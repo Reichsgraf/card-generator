@@ -98,3 +98,14 @@ textarea {
   height: 100%;
   padding: 10px;
 }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 4px;
+
+  input {
+    width: 30px;
+  }
+}

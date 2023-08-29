@@ -82,6 +82,11 @@
     white-space: break-spaces;
     text-align: justify;
     padding: 10px 20px;
+
+    &.description {
+      display: inline-table;
+      margin-bottom: auto;
+    }
   }
 
   .divider {
