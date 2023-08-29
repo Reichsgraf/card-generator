@@ -11,8 +11,7 @@
     </div>
   </div>
   <div class="content-background" [style.font-size]="cardForm.get('fontSize')?.value + 'px'">
-    <div class="content" [innerHTML]="cardForm.get('description')?.value"
-         [style.margin-bottom]="'auto'">
+    <div class="content description" [innerHTML]="description">
     </div>
 
     <ng-container *ngIf="cardForm.get('keywords')?.value as keywords">

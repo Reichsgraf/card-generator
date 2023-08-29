@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {factionList} from "../_static/faction-list";
 import {FormGroup} from "@angular/forms";
 import {ListItem} from "../_interfaces/list-item";
@@ -10,7 +10,8 @@ import {cardbackList} from "../_static/cardback-list";
 @Component({
   selector: 'app-card-settings',
   templateUrl: './card-settings.component.html',
-  styleUrls: ['./card-settings.component.scss']
+  styleUrls: ['./card-settings.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CardSettingsComponent {
 
@@ -87,12 +88,15 @@ export class CardSettingsComponent {
     this.cardForm.get('provision')?.setValue(0);
 
     this.cardForm.get('name')?.setValue('Обыватель');
-    this.cardForm.get('categories')?.setValue('Средний гуманоид')
+    this.cardForm.get('categories')?.setValue('Средний гуманоид');
+    this.cardForm.get('showStats')?.setValue(true);
+    this.cardForm.get('STR')?.setValue(10);
+    this.cardForm.get('DEX')?.setValue(10);
+    this.cardForm.get('CON')?.setValue(10);
+    this.cardForm.get('INT')?.setValue(10);
+    this.cardForm.get('WIS')?.setValue(10);
+    this.cardForm.get('CHA')?.setValue(10);
     this.cardForm.get('description')?.setValue(
-      '<table>' +
-      '<tr><th><b>СИЛ</b></th><th><b>ЛОВ</th><th><b>ТЕЛ</b></th><th><b>ИНТ</b></th><th><b>МДР</b></th><th><b>ХАР</b></th></tr>' +
-      '<tr><td>10 (+0)</td><td>10 (+0)</td><td>10 (+0)</td><td>10 (+0)</td><td>10 (+0)</td><td>10 (+0)</td></tr>' +
-      '</table>\n' +
       'ㅤ<b>Скорость:</b> 30 футов.\n' +
       'ㅤ<b>Чувства:</b> Внимательность (10).\n' +
       'ㅤ<b>Языки:</b> 1 любой (Общий).\n' +
@@ -102,7 +106,10 @@ export class CardSettingsComponent {
     );
     this.cardForm.get('keywords')?.setValue('');
     this.cardForm.get('flavourText')?.setValue('');
+  }
 
+  toggleStat() {
+    this.cardForm.get('showStats')?.setValue(!this.cardForm.get('showStats')?.value);
   }
 
 }

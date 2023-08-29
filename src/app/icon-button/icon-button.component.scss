@@ -3,3 +3,7 @@
   width: 50px;
 }
 
+:host-context(h4) .button {
+  height: 22px;
+  width: 22px;
+}
