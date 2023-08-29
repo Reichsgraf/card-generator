@@ -20,7 +20,7 @@
     <div class="power">{{cardForm.get('power')?.value}}</div>
   </ng-container>
   <ng-template #otherType>
-    <img class="type" [src]="cardForm.get('type')?.value | getTypeImage" alt="">
+    <img *ngIf="cardForm.get('type')?.value" class="type" [src]="cardForm.get('type')?.value | getTypeImage" alt="">
   </ng-template>
 
   <ng-container *ngIf="cardForm.get('armor')?.value">

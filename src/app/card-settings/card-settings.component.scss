@@ -105,6 +105,20 @@ textarea {
   justify-items: center;
   gap: 4px;
 
+  :host-context(.tablet) & {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  :host-context(.mobile) & {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   input {
     width: 30px;
   }
