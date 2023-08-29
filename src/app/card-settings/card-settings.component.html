@@ -124,18 +124,24 @@
         </app-icon-button>
       </h4>
       <div class="stats" *ngIf="cardForm.get('showStats')?.value">
-        <span>STR</span>
-        <span>DEX</span>
-        <span>CON</span>
-        <input formControlName="STR" type="number">
-        <input formControlName="DEX" type="number">
-        <input formControlName="CON" type="number">
-        <span>INT</span>
-        <span>WIS</span>
-        <span>CHA</span>
-        <input formControlName="INT" type="number">
-        <input formControlName="WIS" type="number">
-        <input formControlName="CHA" type="number">
+        <div class="stat">
+          <span>STR</span><input formControlName="STR" type="number">
+        </div>
+        <div class="stat">
+          <span>DEX</span><input formControlName="DEX" type="number">
+        </div>
+        <div class="stat">
+          <span>CON</span><input formControlName="CON" type="number">
+        </div>
+        <div class="stat">
+          <span>INT</span><input formControlName="INT" type="number">
+        </div>
+        <div class="stat">
+          <span>WIS</span><input formControlName="WIS" type="number">
+        </div>
+        <div class="stat">
+          <span>CHA</span><input formControlName="CHA" type="number">
+        </div>
       </div>
     </div>
 
