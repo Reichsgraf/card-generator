@@ -3,24 +3,28 @@
     <div class="section-line">
       <h4>Faction</h4>
       <div class="button-list">
-        <ng-container *ngFor="let faction of factionList">
-          <app-icon-button *ngIf="faction.name" [item]="faction"
-                           (click)="setMainFaction(faction)"
-                           [isActive]="faction.name === cardForm.get('mainFaction')?.value">
-          </app-icon-button>
-        </ng-container>
+        @for (faction of factionList; track faction) {
+          @if (faction.name) {
+            <app-icon-button [item]="faction"
+                             (click)="setMainFaction(faction)"
+                             [isActive]="faction.name === cardForm.get('mainFaction')?.value">
+            </app-icon-button>
+          }
+        }
       </div>
     </div>
 
     <div class="section-line">
       <h4>Second Faction</h4>
       <div class="button-list">
-        <ng-container *ngFor="let faction of factionList">
-          <app-icon-button *ngIf="faction.name !== 'N'" [item]="faction"
-                           (click)="setSecondFaction(faction)"
-                           [isActive]="faction.name === cardForm.get('secondFaction')?.value">
-          </app-icon-button>
-        </ng-container>
+        @for (faction of factionList; track faction) {
+          @if (faction.name !== 'N') {
+            <app-icon-button [item]="faction"
+                             (click)="setSecondFaction(faction)"
+                             [isActive]="faction.name === cardForm.get('secondFaction')?.value">
+            </app-icon-button>
+          }
+        }
       </div>
     </div>
 
@@ -28,24 +32,24 @@
       <div class="section-line">
         <h4>Frame</h4>
         <div class="button-list">
-          <ng-container *ngFor="let frame of frameList">
+          @for (frame of frameList; track frame) {
             <app-icon-button [item]="frame" [imageHeight]="30" [imageWidth]="30"
                              (click)="setFrame(frame)"
                              [isActive]="frame.name === cardForm.get('frame')?.value">
             </app-icon-button>
-          </ng-container>
+          }
         </div>
       </div>
 
       <div class="section-line">
         <h4>Rarity</h4>
         <div class="button-list">
-          <ng-container *ngFor="let rarity of rarityList">
+          @for (rarity of rarityList; track rarity) {
             <app-icon-button [item]="rarity" [imageHeight]="25" [imageWidth]="25"
                              (click)="setRarity(rarity)"
                              [isActive]="rarity.name === cardForm.get('rarity')?.value">
             </app-icon-button>
-          </ng-container>
+          }
         </div>
       </div>
     </div>
@@ -53,24 +57,24 @@
     <div class="section-line">
       <h4>Cardbacks</h4>
       <div class="button-list cardback-list">
-        <ng-container *ngFor="let cardback of cardbackList">
+        @for (cardback of cardbackList; track cardback) {
           <app-icon-button [item]="cardback" [imageHeight]="30" [imageWidth]="25"
                            (click)="setCardback(cardback)"
                            [isActive]="cardback.name === cardForm.get('cardback')?.value">
           </app-icon-button>
-        </ng-container>
+        }
       </div>
     </div>
 
     <div class="section-line">
       <h4>Type</h4>
       <div class="button-list">
-        <ng-container *ngFor="let type of typeList">
+        @for (type of typeList; track type) {
           <app-icon-button *ngIf="type.name !== 'N'" [item]="type"
                            (click)="setType(type)"
                            [isActive]="type.name === cardForm.get('type')?.value">
           </app-icon-button>
-        </ng-container>
+        }
       </div>
     </div>
 
@@ -123,26 +127,28 @@
                          [isActive]="cardForm.get('showStats')?.value">
         </app-icon-button>
       </h4>
-      <div class="stats" *ngIf="cardForm.get('showStats')?.value">
-        <div class="stat">
-          <span>STR</span><input formControlName="STR" type="number">
+      @if (cardForm.get('showStats')?.value) {
+        <div class="stats">
+          <div class="stat">
+            <span>STR</span><input formControlName="STR" type="number">
+          </div>
+          <div class="stat">
+            <span>DEX</span><input formControlName="DEX" type="number">
+          </div>
+          <div class="stat">
+            <span>CON</span><input formControlName="CON" type="number">
+          </div>
+          <div class="stat">
+            <span>INT</span><input formControlName="INT" type="number">
+          </div>
+          <div class="stat">
+            <span>WIS</span><input formControlName="WIS" type="number">
+          </div>
+          <div class="stat">
+            <span>CHA</span><input formControlName="CHA" type="number">
+          </div>
         </div>
-        <div class="stat">
-          <span>DEX</span><input formControlName="DEX" type="number">
-        </div>
-        <div class="stat">
-          <span>CON</span><input formControlName="CON" type="number">
-        </div>
-        <div class="stat">
-          <span>INT</span><input formControlName="INT" type="number">
-        </div>
-        <div class="stat">
-          <span>WIS</span><input formControlName="WIS" type="number">
-        </div>
-        <div class="stat">
-          <span>CHA</span><input formControlName="CHA" type="number">
-        </div>
-      </div>
+      }
     </div>
 
     <div class="section-line">

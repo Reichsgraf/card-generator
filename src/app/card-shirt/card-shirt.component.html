@@ -1,42 +1,42 @@
 <div class="card card-shirt">
   <div class="shirt-background-container">
-    <img *ngIf="cardForm.get('image')?.value" class="image" [src]="cardForm.get('image')?.value" alt="">
+    @if (cardForm.get('image')?.value) {
+      <img class="image" [src]="cardForm.get('image')?.value" alt="">
+    }
   </div>
 
-  <ng-container *ngIf="!cardForm.get('cardback')?.value; else cardback">
-    <img class="frame" [src]="cardForm.get('frame')?.value | getFrameImage:false" alt="">
-  </ng-container>
-  <ng-template #cardback>
+  @if (cardForm.get('cardback')?.value) {
     <img class="frame" [src]="cardForm.get('cardback')?.value | getCardbackImage" alt="">
-  </ng-template>
+  } @else {
+    <img class="frame" [src]="cardForm.get('frame')?.value | getFrameImage:false" alt="">
+  }
 
-  <ng-container *ngIf="cardForm.get('type')?.value">
+  @if (cardForm.get('type')?.value) {
     <img class="power-banner" [src]="cardForm.get('mainFaction')?.value | getBannerImage" alt="">
 
     <img class="rarity" [src]="cardForm.get('rarity')?.value | getRarityImage" alt="">
-  </ng-container>
+  }
 
-  <ng-container *ngIf="cardForm.get('type')?.value === 'unit'; else otherType">
+  @if (cardForm.get('type')?.value === 'unit') {
     <div class="power">{{cardForm.get('power')?.value}}</div>
-  </ng-container>
-  <ng-template #otherType>
-    <img *ngIf="cardForm.get('type')?.value" class="type" [src]="cardForm.get('type')?.value | getTypeImage" alt="">
-  </ng-template>
+  } @else if (cardForm.get('type')?.value) {
+    <img class="type" [src]="cardForm.get('type')?.value | getTypeImage" alt="">
+  }
 
-  <ng-container *ngIf="cardForm.get('armor')?.value">
+  @if (cardForm.get('armor')?.value) {
     <img class="armor-banner" [src]="'assets/images/armor_banner.png'" alt="">
 
     <div class="armor">{{cardForm.get('armor')?.value}}</div>
-  </ng-container>
+  }
 
-  <ng-container *ngIf="cardForm.get('provision')?.value">
+  @if (cardForm.get('provision')?.value) {
     <img class="provision-head" [src]="'assets/images/provision_banner_head.png'" alt="">
     <img class="provision-banner" [src]="cardForm.get('mainFaction')?.value | getProvisionBannerImage" alt="">
 
     <div class="provision" [style.font-size]="cardForm.get('provision')?.value | getProvisionFontSize">
       {{cardForm.get('provision')?.value}}
     </div>
-  </ng-container>
+  }
 </div>
 
 
