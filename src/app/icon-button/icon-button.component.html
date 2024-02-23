@@ -1,4 +1,5 @@
 <button class="button" [ngClass]="{'active': isActive}">
-  <img class="icon" *ngIf="item.icon"
-       [ngSrc]="item.icon" [alt]="item.name" [height]="imageHeight" [width]="imageWidth">
+  @if (item.icon) {
+    <img class="icon" [ngSrc]="item.icon" [alt]="item.name" [height]="imageHeight" [width]="imageWidth">
+  }
 </button>

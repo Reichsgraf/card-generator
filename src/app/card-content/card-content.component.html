@@ -4,8 +4,9 @@
   <div class="header-background">
     <div class="header">
       <img [src]="cardForm.get('mainFaction')?.value | getFactionHeader" alt="">
-      <img *ngIf="cardForm.get('secondFaction')?.value"
-           [src]="cardForm.get('secondFaction')?.value | getSubFactionHeader" alt="">
+      @if (cardForm.get('secondFaction')?.value) {
+        <img [src]="cardForm.get('secondFaction')?.value | getSubFactionHeader" alt="">
+      }
       <span class="title">{{cardForm.get('name')?.value}}</span>
       <span class="subtitle">{{cardForm.get('categories')?.value}}</span>
     </div>
@@ -14,17 +15,17 @@
     <div class="content description" [innerHTML]="description">
     </div>
 
-    <ng-container *ngIf="cardForm.get('keywords')?.value as keywords">
+    @if (cardForm.get('keywords')?.value; as keywords) {
       <img class="separator" [ngSrc]="'assets/images/separator.png'" [height]="19" [width]="228" alt="">
       <div class="content" [innerHTML]="keywords"></div>
-    </ng-container>
+    }
 
-    <ng-container *ngIf="cardForm.get('flavourText')?.value as flavorText">
+    @if (cardForm.get('flavourText')?.value; as flavorText) {
       <img class="divider" [ngSrc]="'assets/images/divider.png'" [height]="3" [width]="323" alt="">
       <div class="footer-background-1">
         <div class="content" [innerHTML]="flavorText"></div>
       </div>
-    </ng-container>
+    }
   </div>
 
   <div class="footer-background-2"></div>
