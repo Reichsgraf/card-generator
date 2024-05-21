@@ -80,7 +80,6 @@
 
   .content {
     white-space: break-spaces;
-    text-align: justify;
     padding: 10px 20px;
 
     &.description {
@@ -110,10 +109,5 @@
     background-size: 100% 100%;
     height: 12px;
     width: 325px;
-  }
-
-  ::ng-deep b {
-    font-family: Gwent, sans-serif;
-    color: #600101;
   }
 }
