@@ -153,17 +153,20 @@
 
     <div class="section-line">
       <h4>Description</h4>
-      <textarea formControlName="description" [rows]="6"></textarea>
+      <quill-editor class="main-description" formControlName="description">
+      </quill-editor>
     </div>
 
     <div class="section-line">
       <h4>Keywords</h4>
-      <textarea formControlName="keywords" [rows]="3"></textarea>
+      <quill-editor class="secondary-description" formControlName="keywords">
+      </quill-editor>
     </div>
 
     <div class="section-line">
       <h4>Flavour text</h4>
-      <textarea formControlName="flavourText" [rows]="3"></textarea>
+      <quill-editor class="secondary-description" formControlName="flavourText">
+      </quill-editor>
     </div>
 
     <div class="section-line">

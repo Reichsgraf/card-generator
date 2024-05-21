@@ -40,10 +40,9 @@ export class AppComponent {
       INT: [10],
       WIS: [10],
       CHA: [10],
-      description: ['ㅤ<b>Stat:</b> Dexterity\n' +
-      'Additional text.'],
-      keywords: ['<center><b>Keyword1</b>, <b>Keyword2</b></center>'],
-      flavourText: ['<i>Up for a round of Gwent?</i>']
+      description: ['<p class="ql-align-justify ql-indent-1"><strong>Stat:</strong> Dexterity</p><p class="ql-align-justify">Additional text.</p>'],
+      keywords: ['<p class="ql-align-center"><strong>Keyword1</strong>, <strong>Keyword2</strong></p>'],
+      flavourText: ['<p><i>Up for a round of Gwent?</i></p>']
     });
   }
 

@@ -66,16 +66,17 @@ export class CardSettingsComponent {
     this.cardForm.get('fontSize')?.setValue(14);
 
     this.cardForm.get('name')?.setValue('Благословение');
-    this.cardForm.get('categories')?.setValue('1 уровень')
+    this.cardForm.get('categories')?.setValue('1 уровень');
+    this.cardForm.get('showStats')?.setValue(false);
     this.cardForm.get('description')?.setValue(
-      'ㅤ<b>Время накладвания:</b> 1 действие.\n' +
-      'ㅤ<b>Дистанция:</b> 30 футов.\n' +
-      'ㅤ<b>Компоненты:</b> В, С, М (капля святой воды).\n' +
-      'ㅤ<b>Длительность:</b> концентрация (до 1 минуты).\n' +
-      'ㅤВы благословляете до трёх существ на свой выбор в пределах дистанции. До окончания заклинания цель, совершая бросок атаки или спасбросок, может добавить d4 к результату броска.\n' +
-      'ㅤ<b>На высоких уровнях:</b> одно дополнительное целевое существо за каждый уровень ячейки выше первого.'
+      '<p class="ql-align-justify ql-indent-1"><strong>Время накладвания:</strong> 1 действие.</p>' +
+      '<p class="ql-align-justify ql-indent-1"><strong>Дистанция:</strong> 30 футов.</p>' +
+      '<p class="ql-align-justify ql-indent-1"><strong>Компоненты:</strong> В, С, М (капля святой воды).</p>' +
+      '<p class="ql-align-justify ql-indent-1"><strong>Длительность:</strong> концентрация (до 1 минуты).</p>' +
+      '<p class="ql-align-justify ql-indent-1">Вы благословляете до трёх существ на свой выбор в пределах дистанции. До окончания заклинания цель, совершая бросок атаки или спасбросок, может добавить d4 к результату броска.</p>' +
+      '<p class="ql-align-justify ql-indent-1"><strong>На высоких уровнях:</strong> одно дополнительное целевое существо за каждый уровень ячейки выше первого.</p>'
     );
-    this.cardForm.get('keywords')?.setValue('<center><b>Школа Очарования</b></center>');
+    this.cardForm.get('keywords')?.setValue('<p class="ql-align-center"><strong>Школа Очарования</strong></p>');
     this.cardForm.get('flavourText')?.setValue('');
   }
 
@@ -97,12 +98,14 @@ export class CardSettingsComponent {
     this.cardForm.get('WIS')?.setValue(10);
     this.cardForm.get('CHA')?.setValue(10);
     this.cardForm.get('description')?.setValue(
-      'ㅤ<b>Скорость:</b> 30 футов.\n' +
-      'ㅤ<b>Чувства:</b> Внимательность (10).\n' +
-      'ㅤ<b>Языки:</b> 1 любой (Общий).\n' +
-      'ㅤ<b>Опасность:</b> 0 (10 опыта).\n\n' +
-      '<b>Действия</b>\n' +
-      'ㅤ<b>Удар дубиной:</b> рукопашная атака оружием, +2 к попаданию, досягаемость 5 футов, 1 цель, урон: 1d4 дробящий.'
+      '<p></p>' +
+      '<p class="ql-align-justify ql-indent-1"><strong>Скорость:</strong> 30 футов.</p>' +
+      '<p class="ql-align-justify ql-indent-1"><strong>Чувства:</strong> Внимательность (10).</p>' +
+      '<p class="ql-align-justify ql-indent-1"><strong>Языки:</strong> 1 любой (Общий).</p>' +
+      '<p class="ql-align-justify ql-indent-1"><strong>Опасность:</strong> 0 (10 опыта).</p>' +
+      '<p></p>' +
+      '<strong><strong>Действия</strong></strong>' +
+      '<p class="ql-align-justify ql-indent-1"><strong>Удар дубиной:</strong> рукопашная атака оружием, +2 к попаданию, досягаемость 5 футов, 1 цель, урон: 1d4 дробящий.'
     );
     this.cardForm.get('keywords')?.setValue('');
     this.cardForm.get('flavourText')?.setValue('');

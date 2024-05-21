@@ -21,6 +21,7 @@ import {ResponsiveModule} from "./_modules/responsive/responsive.module";
 import {ResponsiveService} from "./_modules/responsive/responsive.service";
 import { GetTypeImagePipe } from './_pipes/get-type-image.pipe';
 import { GetCardbackImagePipe } from './_pipes/get-cardback-image.pipe';
+import {QuillConfigModule, QuillModule} from "ngx-quill";
 
 @NgModule({
   declarations: [
@@ -46,6 +47,18 @@ import { GetCardbackImagePipe } from './_pipes/get-cardback-image.pipe';
     ReactiveFormsModule,
     ClipboardModule,
     ResponsiveModule,
+    QuillModule.forRoot(),
+    QuillConfigModule.forRoot({
+      modules: {
+        syntax: false,
+        toolbar: [
+          ['bold', 'italic', 'underline', 'strike'],
+          [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+          [{ 'align': ['', 'center', 'justify'] }],
+          [{ 'indent': '-1'}, { 'indent': '+1' }],
+        ]
+      }
+    })
   ],
   exports: [],
   providers: [
