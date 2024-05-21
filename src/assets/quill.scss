@@ -4,6 +4,7 @@ quill-editor {
   background: #e2cca9;
 
   .ql-toolbar.ql-snow {
+    border: none;
     border-bottom: 2px solid #2b1e16;
 
     .ql-formats {
@@ -17,6 +18,8 @@ quill-editor {
   }
 
   .ql-container {
+    font-size: 14px;
+
     &.ql-snow {
       border: none;
     }
