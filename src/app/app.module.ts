@@ -22,6 +22,7 @@ import {ResponsiveService} from "./_modules/responsive/responsive.service";
 import { GetTypeImagePipe } from './_pipes/get-type-image.pipe';
 import { GetCardbackImagePipe } from './_pipes/get-cardback-image.pipe';
 import {QuillConfigModule, QuillModule} from "ngx-quill";
+import {NgxTranslateModule} from "./_modules/translate/translate.module";
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import {QuillConfigModule, QuillModule} from "ngx-quill";
   imports: [
     BrowserModule,
     NgOptimizedImage,
+    NgxTranslateModule,
     ReactiveFormsModule,
     ClipboardModule,
     ResponsiveModule,

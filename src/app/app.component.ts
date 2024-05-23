@@ -1,6 +1,7 @@
 import {Component, ElementRef, inject, ViewChild} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
 import * as htmlToImage from 'html-to-image';
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-root',
@@ -9,6 +10,7 @@ import * as htmlToImage from 'html-to-image';
 })
 export class AppComponent {
 
+  translateService = inject(TranslateService);
   formBuilder = inject(FormBuilder);
 
   @ViewChild('card') card!: ElementRef;
@@ -17,6 +19,8 @@ export class AppComponent {
   cardForm: FormGroup;
 
   constructor() {
+    this.translateService.use(this.translateService.defaultLang);
+
     this.cardForm = this.formBuilder.group({
       mainFaction: ['N'],
       secondFaction: [''],

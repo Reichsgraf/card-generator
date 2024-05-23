@@ -1,0 +1,21 @@
+{
+  "settings": {
+    "language": "Язык",
+    "faction": "Основная фракция",
+    "second-faction": "Втоостепенная фракция",
+    "frame": "Рамка",
+    "rarity": "Редкость",
+    "cardback": "Рубашка",
+    "type": "Тип",
+    "font-size": "Размер шрифта"
+  },
+  "content": {
+    "name": "Название карты",
+    "categories": "Категории",
+    "stats": "Характеристики",
+    "description": "Описание",
+    "keywords": "Ключевые слова",
+    "flavour-text": "Дополнительный текст",
+    "templates": "Шаблоны"
+  }
+}

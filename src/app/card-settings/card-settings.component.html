@@ -1,7 +1,21 @@
 <div class="card-settings" [formGroup]="cardForm">
   <div class="section icons">
     <div class="section-line">
-      <h4>Faction</h4>
+      <h4>{{ 'settings.language' | translate }}</h4>
+      <div class="button-list">
+        @for (language of languageList; track language) {
+          @if (language.name) {
+            <app-icon-button [item]="language"
+                             (click)="setLanguage(language)"
+                             [isActive]="language.name === languageControl?.value">
+            </app-icon-button>
+          }
+        }
+      </div>
+    </div>
+
+    <div class="section-line">
+      <h4>{{ 'settings.faction' | translate }}</h4>
       <div class="button-list">
         @for (faction of factionList; track faction) {
           @if (faction.name) {
@@ -15,7 +29,7 @@
     </div>
 
     <div class="section-line">
-      <h4>Second Faction</h4>
+      <h4>{{ 'settings.second-faction' | translate }}</h4>
       <div class="button-list">
         @for (faction of factionList; track faction) {
           @if (faction.name !== 'N') {
@@ -30,7 +44,7 @@
 
     <div class="two-sections">
       <div class="section-line">
-        <h4>Frame</h4>
+        <h4>{{ 'settings.frame' | translate }}</h4>
         <div class="button-list">
           @for (frame of frameList; track frame) {
             <app-icon-button [item]="frame" [imageHeight]="30" [imageWidth]="30"
@@ -42,7 +56,7 @@
       </div>
 
       <div class="section-line">
-        <h4>Rarity</h4>
+        <h4>{{ 'settings.rarity' | translate }}</h4>
         <div class="button-list">
           @for (rarity of rarityList; track rarity) {
             <app-icon-button [item]="rarity" [imageHeight]="25" [imageWidth]="25"
@@ -55,7 +69,7 @@
     </div>
 
     <div class="section-line">
-      <h4>Cardbacks</h4>
+      <h4>{{ 'settings.cardback' | translate }}</h4>
       <div class="button-list cardback-list">
         @for (cardback of cardbackList; track cardback) {
           <app-icon-button [item]="cardback" [imageHeight]="30" [imageWidth]="25"
@@ -67,7 +81,7 @@
     </div>
 
     <div class="section-line">
-      <h4>Type</h4>
+      <h4>{{ 'settings.type' | translate }}</h4>
       <div class="button-list">
         @for (type of typeList; track type) {
           <app-icon-button *ngIf="type.name !== 'N'" [item]="type"
@@ -92,7 +106,7 @@
         <input type="text" formControlName="provision">
       </div>
       <div class="stat-block">
-        <h4>Font Size</h4>
+        <h4>{{ 'settings.font-size' | translate }}</h4>
         <input type="number" formControlName="fontSize">
       </div>
     </div>
@@ -110,18 +124,18 @@
 
   <div class="section">
     <div class="section-line">
-      <h4>Card Name</h4>
+      <h4>{{ 'content.name' | translate }}</h4>
       <input formControlName="name">
     </div>
 
     <div class="section-line">
-      <h4>Categories</h4>
+      <h4>{{ 'content.categories' | translate }}</h4>
       <input formControlName="categories">
     </div>
 
     <div class="section-line">
       <h4>
-        Stats
+        {{ 'content.stats' | translate }}
         <app-icon-button (click)="toggleStat()" [item]="factionList[1]"
                          [imageHeight]="18" [imageWidth]="18"
                          [isActive]="cardForm.get('showStats')?.value">
@@ -152,25 +166,25 @@
     </div>
 
     <div class="section-line">
-      <h4>Description</h4>
+      <h4>{{ 'content.description' | translate }}</h4>
       <quill-editor class="main-description" formControlName="description">
       </quill-editor>
     </div>
 
     <div class="section-line">
-      <h4>Keywords</h4>
+      <h4>{{ 'content.keywords' | translate }}</h4>
       <quill-editor class="secondary-description" formControlName="keywords">
       </quill-editor>
     </div>
 
     <div class="section-line">
-      <h4>Flavour text</h4>
+      <h4>{{ 'content.flavour-text' | translate }}</h4>
       <quill-editor class="secondary-description" formControlName="flavourText">
       </quill-editor>
     </div>
 
     <div class="section-line">
-      <h4>Templates</h4>
+      <h4>{{ 'content.templates' | translate }}</h4>
       <div class="button-list">
         <app-text-button [text]="'Spell'" (click)="setSpellTemplate()"></app-text-button>
         <app-text-button [text]="'Character'" (click)="setCharacterTemplate()"></app-text-button>
