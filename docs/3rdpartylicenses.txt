@@ -60,6 +60,12 @@ THE SOFTWARE.
 @angular/platform-browser
 MIT
 
+@ngx-translate/core
+SEE LICENSE IN LICENSE
+
+@ngx-translate/http-loader
+SEE LICENSE IN LICENSE
+
 eventemitter3
 MIT
 The MIT License (MIT)
