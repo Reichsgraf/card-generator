@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "src/assets/mixins";
 @import "assets/quill";
 
 @import '~quill/dist/quill.core.css';
@@ -11,6 +12,7 @@ body {
   width: 100%;
   position: relative;
   margin: 0;
+  @include scrollbar(4px, #600101);
 }
 
 @font-face {
@@ -31,7 +33,7 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 0 3px 0;
+  padding: 0;
   text-transform: uppercase;
   font-weight: 700;
   font-family: Gwent, fantasy;
