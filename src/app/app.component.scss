@@ -11,6 +11,7 @@
     grid-template-areas:
       's r'
       'f f';
+    grid-template-columns: 2fr 1fr;
   }
 
   :host-context(.tablet), :host-context(.mobile) {

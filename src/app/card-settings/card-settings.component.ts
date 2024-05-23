@@ -1,11 +1,13 @@
-import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, Input} from '@angular/core';
 import {factionList} from "../_static/faction-list";
-import {FormGroup} from "@angular/forms";
+import {FormControl, FormGroup} from "@angular/forms";
 import {ListItem} from "../_interfaces/list-item";
 import {frameList} from "../_static/frame-list";
 import {rarityList} from "../_static/rarity-list";
 import {typeList} from "../_static/type-list";
 import {cardbackList} from "../_static/cardback-list";
+import {languageList} from "../_static/language-list";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-card-settings',
@@ -15,13 +17,22 @@ import {cardbackList} from "../_static/cardback-list";
 })
 export class CardSettingsComponent {
 
-  @Input() cardForm!: FormGroup;
+  translateService = inject(TranslateService);
 
+  @Input() cardForm!: FormGroup;
+  languageControl: FormControl = new FormControl('en');
+
+  languageList = languageList;
   factionList = factionList;
   frameList = frameList;
   rarityList = rarityList;
   typeList = typeList;
   cardbackList = cardbackList;
+
+  setLanguage(language: ListItem) {
+    this.languageControl.setValue(language.name);
+    this.translateService.use(language.name);
+  }
 
   setMainFaction(faction: ListItem) {
     this.setFormField('mainFaction', faction.name);

@@ -1,0 +1,21 @@
+{
+  "settings": {
+    "language": "Language",
+    "faction": "Faction",
+    "second-faction": "Second Faction",
+    "frame": "Frame",
+    "rarity": "Rarity",
+    "cardback": "Cardback",
+    "type": "Type",
+    "font-size": "Font Size"
+  },
+  "content": {
+    "name": "Card Name",
+    "categories": "Categories",
+    "stats": "Stats",
+    "description": "Description",
+    "keywords": "Keywords",
+    "flavour-text": "Flavour Text",
+    "templates": "Templates"
+  }
+}
