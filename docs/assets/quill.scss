@@ -23,6 +23,10 @@ quill-editor {
     &.ql-snow {
       border: none;
     }
+
+    .ql-editor {
+      @include scrollbar(4px, #600101);
+    }
   }
 }
 
