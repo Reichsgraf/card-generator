@@ -3,7 +3,7 @@
   grid-auto-flow: row;
   align-items: center;
   justify-content: center;
-  gap: 60px;
+  gap: 40px;
   width: fit-content;
   margin: 0 auto;
 
@@ -12,6 +12,7 @@
       's r'
       'f f';
     grid-template-columns: 2fr 1fr;
+    padding: 40px 40px 0;
   }
 
   :host-context(.tablet), :host-context(.mobile) {
