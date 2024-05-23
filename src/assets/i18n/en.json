@@ -13,9 +13,22 @@
     "name": "Card Name",
     "categories": "Categories",
     "stats": "Stats",
+    "stat-name": {
+      "strength": "STR",
+      "dexterity": "DEX",
+      "constitution": "CON",
+      "intellect": "INT",
+      "wisdom": "WIS",
+      "charisma": "CHA"
+    },
     "description": "Description",
     "keywords": "Keywords",
     "flavour-text": "Flavour Text",
     "templates": "Templates"
+  },
+  "result": {
+    "card-shirt": "Download Card Shirt",
+    "full-card": "Download",
+    "card-content": "Download Card Content"
   }
 }

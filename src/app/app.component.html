@@ -11,9 +11,9 @@
   </div>
 
   <div class="download-buttons">
-    <app-text-button [text]="'Download Card Shirt'" (click)="download('shirt')"></app-text-button>
-    <app-text-button [text]="'Download'" (click)="download('card')"></app-text-button>
-    <app-text-button [text]="'Download Card Content'" (click)="download('content')"></app-text-button>
+    <app-text-button [text]="'result.card-shirt' | translate" (click)="download('shirt')"></app-text-button>
+    <app-text-button [text]="'result.full-card' | translate" (click)="download('card')"></app-text-button>
+    <app-text-button [text]="'result.card-content' | translate" (click)="download('content')"></app-text-button>
   </div>
 </div>
 

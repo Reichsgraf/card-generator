@@ -7,7 +7,7 @@
           @if (language.name) {
             <app-icon-button [item]="language"
                              (click)="setLanguage(language)"
-                             [isActive]="language.name === languageControl?.value">
+                             [isActive]="language.name === languageControl.value">
             </app-icon-button>
           }
         }
@@ -144,22 +144,22 @@
       @if (cardForm.get('showStats')?.value) {
         <div class="stats">
           <div class="stat">
-            <span>STR</span><input formControlName="STR" type="number">
+            <span>{{ 'content.stat-name.strength' | translate }}</span><input formControlName="STR" type="number">
           </div>
           <div class="stat">
-            <span>DEX</span><input formControlName="DEX" type="number">
+            <span>{{ 'content.stat-name.dexterity' | translate }}</span><input formControlName="DEX" type="number">
           </div>
           <div class="stat">
-            <span>CON</span><input formControlName="CON" type="number">
+            <span>{{ 'content.stat-name.constitution' | translate }}</span><input formControlName="CON" type="number">
           </div>
           <div class="stat">
-            <span>INT</span><input formControlName="INT" type="number">
+            <span>{{ 'content.stat-name.intellect' | translate }}</span><input formControlName="INT" type="number">
           </div>
           <div class="stat">
-            <span>WIS</span><input formControlName="WIS" type="number">
+            <span>{{ 'content.stat-name.wisdom' | translate }}</span><input formControlName="WIS" type="number">
           </div>
           <div class="stat">
-            <span>CHA</span><input formControlName="CHA" type="number">
+            <span>{{ 'content.stat-name.charisma' | translate }}</span><input formControlName="CHA" type="number">
           </div>
         </div>
       }

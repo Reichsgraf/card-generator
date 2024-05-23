@@ -12,7 +12,7 @@
   gap: 40px;
 
   :host-context(.desktop) & {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: min-content 1fr;
   }
 
   :host-context(.tablet) & {
@@ -27,11 +27,12 @@
 .section {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
 
   &-line {
     display: flex;
     flex-direction: column;
+    gap: 3px;
   }
 
   :host-context(.tablet) &.icons {
@@ -80,7 +81,7 @@
 
 .cardback-list {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, min-content);
 }
 
 input, textarea {

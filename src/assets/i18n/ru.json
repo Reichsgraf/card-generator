@@ -13,9 +13,22 @@
     "name": "Название карты",
     "categories": "Категории",
     "stats": "Характеристики",
+    "stat-name": {
+      "strength": "СИЛ",
+      "dexterity": "ЛОВ",
+      "constitution": "ТЕЛ",
+      "intellect": "ИНТ",
+      "wisdom": "МУД",
+      "charisma": "ХАР"
+    },
     "description": "Описание",
     "keywords": "Ключевые слова",
     "flavour-text": "Дополнительный текст",
     "templates": "Шаблоны"
+  },
+  "result": {
+    "card-shirt": "Скачать рубашку карты",
+    "full-card": "Скачать",
+    "card-content": "Скачать контент карты"
   }
 }
