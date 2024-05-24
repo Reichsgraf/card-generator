@@ -1,20 +1,27 @@
-import {Component, inject, Input} from '@angular/core';
+import {Component, inject, Input, OnInit} from '@angular/core';
 import {FormGroup} from "@angular/forms";
-import {TranslateService} from "@ngx-translate/core";
-import {Observable} from "rxjs";
+import {LangChangeEvent, TranslateService} from "@ngx-translate/core";
+import {map, Observable, startWith, tap} from "rxjs";
 
 @Component({
   selector: 'app-card-content',
   templateUrl: './card-content.component.html',
   styleUrls: ['./card-content.component.scss']
 })
-export class CardContentComponent {
+export class CardContentComponent implements OnInit {
 
   translateService = inject(TranslateService);
 
   @Input() cardForm!: FormGroup;
 
-  currentLocale$!: Observable<string>;
+  currentLocale$!: Observable<any>;
+
+  ngOnInit() {
+    this.currentLocale$ = this.translateService.onLangChange.pipe(
+      map((event: LangChangeEvent) => event.lang),
+      startWith(this.translateService.currentLang),
+    );
+  }
 
   get description() {
     let description = '';

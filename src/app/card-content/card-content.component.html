@@ -1,4 +1,4 @@
-<div class="card" [lang]="translateService.currentLang">
+<div class="card" [lang]="currentLocale$ | async">
   <!--<img class="frame" [src]="cardForm.get('frame')?.value | getFrameImage:true" alt="">-->
 
   <div class="header-background">

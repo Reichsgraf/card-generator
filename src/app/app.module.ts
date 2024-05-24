@@ -23,6 +23,7 @@ import { GetTypeImagePipe } from './_pipes/get-type-image.pipe';
 import { GetCardbackImagePipe } from './_pipes/get-cardback-image.pipe';
 import {QuillConfigModule, QuillModule} from "ngx-quill";
 import {NgxTranslateModule} from "./_modules/translate/translate.module";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -42,26 +43,27 @@ import {NgxTranslateModule} from "./_modules/translate/translate.module";
     GetTypeImagePipe,
     GetCardbackImagePipe,
   ],
-  imports: [
-    BrowserModule,
-    NgOptimizedImage,
-    NgxTranslateModule,
-    ReactiveFormsModule,
-    ClipboardModule,
-    ResponsiveModule,
-    QuillModule.forRoot(),
-    QuillConfigModule.forRoot({
-      modules: {
-        syntax: false,
-        toolbar: [
-          ['bold', 'italic', 'underline', 'strike'],
-          [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-          [{ 'align': ['', 'center', 'justify'] }],
-          [{ 'indent': '-1'}, { 'indent': '+1' }],
-        ]
-      }
-    })
-  ],
+    imports: [
+        BrowserModule,
+        NgOptimizedImage,
+        NgxTranslateModule,
+        ReactiveFormsModule,
+        ClipboardModule,
+        ResponsiveModule,
+        QuillModule.forRoot(),
+        QuillConfigModule.forRoot({
+            modules: {
+                syntax: false,
+                toolbar: [
+                    ['bold', 'italic', 'underline', 'strike'],
+                    [{'list': 'ordered'}, {'list': 'bullet'}],
+                    [{'align': ['', 'center', 'justify']}],
+                    [{'indent': '-1'}, {'indent': '+1'}],
+                ]
+            }
+        }),
+        MatTooltipModule
+    ],
   exports: [],
   providers: [
     ResponsiveService
