@@ -71,8 +71,12 @@
     <div class="section-line">
       <h4>{{ 'settings.cardback' | translate }}</h4>
       <div class="button-list cardback-list">
-        @for (cardback of cardbackList; track cardback) {
-          <app-icon-button [item]="cardback" [imageHeight]="30" [imageWidth]="25"
+        <app-text-button [text]="'settings.load-image'" [width]="'160px'"
+                         (click)="setCardback(cardbackList[0]); fileUpload.click()">
+          <input type="file" [style.display]="'none'" (change)="uploadCardShirt($event)" #fileUpload accept="image/*">
+        </app-text-button>
+        @for (cardback of cardbackList; track cardback; let index = $index) {
+          <app-icon-button *ngIf="index" [item]="cardback" [imageHeight]="30" [imageWidth]="25"
                            (click)="setCardback(cardback)"
                            [isActive]="cardback.name === cardForm.get('cardback')?.value">
           </app-icon-button>
@@ -112,11 +116,8 @@
     </div>
 
     <div class="button-list" [style.justify-content]="'space-between'">
-      <app-text-button [text]="'Load Image'" (click)="fileUpload.click()">
-        <input type="file" [style.display]="'none'" (change)="uploadCardShirt($event)" #fileUpload accept="image/*">
-      </app-text-button>
-
-      <app-text-button [text]="'Copy Tab Character'" [cdkCopyToClipboard]="'ㅤ'">
+      <app-text-button [text]="'settings.tab-char'" [cdkCopyToClipboard]="'ㅤ'"
+                       [matTooltip]="'This one as well as tab in text editor does not work in Mozilla'">
       </app-text-button>
     </div>
 
@@ -186,8 +187,8 @@
     <div class="section-line">
       <h4>{{ 'content.templates' | translate }}</h4>
       <div class="button-list">
-        <app-text-button [text]="'Spell'" (click)="setSpellTemplate()"></app-text-button>
-        <app-text-button [text]="'Character'" (click)="setCharacterTemplate()"></app-text-button>
+        <app-text-button [text]="'content.spell'" (click)="setSpellTemplate()"></app-text-button>
+        <app-text-button [text]="'content.npc'" (click)="setCharacterTemplate()"></app-text-button>
       </div>
     </div>
   </div>
