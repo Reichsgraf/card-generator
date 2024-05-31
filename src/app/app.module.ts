@@ -56,7 +56,7 @@ import {MatTooltipModule} from "@angular/material/tooltip";
                 syntax: false,
                 toolbar: [
                     ['bold', 'italic', 'underline', 'strike'],
-                    [{'list': 'ordered'}, {'list': 'bullet'}],
+                    [/*{'list': 'ordered'},*/ {'list': 'bullet'}],
                     [{'align': ['', 'center', 'justify']}],
                     [{'indent': '-1'}, {'indent': '+1'}],
                 ]

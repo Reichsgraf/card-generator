@@ -67,4 +67,18 @@ quill-editor {
       }
     }
   }
+
+  ul {
+    padding: 0;
+
+    li {
+      &::marker {
+        content: '';
+      }
+
+      &::before {
+        content: 'ㅤ• ';
+      }
+    }
+  }
 }
