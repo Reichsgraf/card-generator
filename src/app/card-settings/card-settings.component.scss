@@ -77,6 +77,7 @@
 .button-list {
   display: flex;
   gap: 5px;
+  app-text-button .button { hyphens: auto; }
 }
 
 .cardback-list {

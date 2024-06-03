@@ -10,7 +10,8 @@
     "type": "Type",
     "font-size": "Font Size",
 
-    "tab-char": "Copy Tab Character"
+    "tab-char": "Tab Character",
+    "multiplication-sign": "Multiplication Sign"
   },
   "content": {
     "name": "Card Name",

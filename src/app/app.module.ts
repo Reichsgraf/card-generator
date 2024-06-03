@@ -24,6 +24,9 @@ import { GetCardbackImagePipe } from './_pipes/get-cardback-image.pipe';
 import {QuillConfigModule, QuillModule} from "ngx-quill";
 import {NgxTranslateModule} from "./_modules/translate/translate.module";
 import {MatTooltipModule} from "@angular/material/tooltip";
+import {QuillEditorToolbar} from "./_utility/quill-rich-text-editor";
+import {GetFormControlPipe} from "./_pipes/get-form-control.pipe";
+import {TextEditorComponent} from "./text-editor/text-editor.component";
 
 @NgModule({
   declarations: [
@@ -43,27 +46,26 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     GetTypeImagePipe,
     GetCardbackImagePipe,
   ],
-    imports: [
-        BrowserModule,
-        NgOptimizedImage,
-        NgxTranslateModule,
-        ReactiveFormsModule,
-        ClipboardModule,
-        ResponsiveModule,
-        QuillModule.forRoot(),
-        QuillConfigModule.forRoot({
-            modules: {
-                syntax: false,
-                toolbar: [
-                    ['bold', 'italic', 'underline', 'strike'],
-                    [/*{'list': 'ordered'},*/ {'list': 'bullet'}],
-                    [{'align': ['', 'center', 'justify']}],
-                    [{'indent': '-1'}, {'indent': '+1'}],
-                ]
-            }
-        }),
-        MatTooltipModule
-    ],
+  imports: [
+    BrowserModule,
+    NgOptimizedImage,
+    NgxTranslateModule,
+    ReactiveFormsModule,
+    ClipboardModule,
+    ResponsiveModule,
+    QuillModule.forRoot(),
+    QuillConfigModule.forRoot({
+      modules: {
+        syntax: false,
+        toolbar: {
+          container: QuillEditorToolbar,
+        }
+      },
+    }),
+    MatTooltipModule,
+    GetFormControlPipe,
+    TextEditorComponent
+  ],
   exports: [],
   providers: [
     ResponsiveService

@@ -1,7 +1,7 @@
 import {Component, inject, Input, OnInit} from '@angular/core';
 import {FormGroup} from "@angular/forms";
 import {LangChangeEvent, TranslateService} from "@ngx-translate/core";
-import {map, Observable, startWith, tap} from "rxjs";
+import {map, Observable, startWith} from "rxjs";
 
 @Component({
   selector: 'app-card-content',
@@ -40,7 +40,7 @@ export class CardContentComponent implements OnInit {
         </table>\n`;
     }
 
-    description += this.cardForm.get('description')?.value;
+    description += this.cardForm.get('description')?.value || '';
 
     return description;
   }
