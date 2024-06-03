@@ -119,6 +119,9 @@
       <app-text-button [text]="'settings.tab-char'" [cdkCopyToClipboard]="'ㅤ'"
                        [matTooltip]="'This one as well as tab in text editor does not work in Mozilla'">
       </app-text-button>
+
+      <app-text-button [text]="'settings.multiplication-sign'" [cdkCopyToClipboard]="'×'">
+      </app-text-button>
     </div>
 
   </div>
@@ -168,20 +171,22 @@
 
     <div class="section-line">
       <h4>{{ 'content.description' | translate }}</h4>
-      <quill-editor class="main-description" formControlName="description">
-      </quill-editor>
+      <!--<quill-editor class="main-description" formControlName="description">
+      </quill-editor>-->
+      <app-text-editor class="main-description" [control]="cardForm | getFormControl:'description'">
+      </app-text-editor>
     </div>
 
     <div class="section-line">
       <h4>{{ 'content.keywords' | translate }}</h4>
-      <quill-editor class="secondary-description" formControlName="keywords">
-      </quill-editor>
+      <app-text-editor class="secondary-description" [control]="cardForm | getFormControl:'keywords'">
+      </app-text-editor>
     </div>
 
     <div class="section-line">
       <h4>{{ 'content.flavour-text' | translate }}</h4>
-      <quill-editor class="secondary-description" formControlName="flavourText">
-      </quill-editor>
+      <app-text-editor class="secondary-description" [control]="cardForm | getFormControl:'flavourText'">
+      </app-text-editor>
     </div>
 
     <div class="section-line">
