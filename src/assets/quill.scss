@@ -23,6 +23,12 @@ quill-editor {
 
     .ql-clear {
       opacity: 0.7;
+
+      &:hover {
+        opacity: 1;
+        // TODO: invent better solution
+        filter: invert(29%) sepia(100%) saturate(1021%) hue-rotate(185deg) brightness(94%) contrast(118%);
+      }
     }
   }
 
