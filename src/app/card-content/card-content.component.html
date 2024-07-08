@@ -1,4 +1,9 @@
-<div class="card" [lang]="currentLocale$ | async">
+<div class="card" [lang]="currentLocale$ | async"
+     [ngClass]="{
+        'poker-format': cardForm.get('format')?.value === '63,5 x 88',
+        'gw-format': cardForm.get('format')?.value !== '63,5 x 88'
+     }">
+  <!--todo: in the name of all that is beautiful in the world, redone this part, please ^^-->
   <!--<img class="frame" [src]="cardForm.get('frame')?.value | getFrameImage:true" alt="">-->
 
   <div class="header-background">

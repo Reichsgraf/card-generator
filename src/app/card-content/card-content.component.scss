@@ -9,6 +9,14 @@
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
 
+  &.poker-format {
+    height: 465px;
+  }
+
+  &.gw-format {
+    height: 500px;
+  }
+
   .frame {
     display: flex;
     height: 100%;

@@ -50,6 +50,12 @@ h4 {
   width: 325px;
   position: relative;
 
+  &.gw-format {
+    .content-background, .footer-background-2 {
+      filter: brightness(150%);
+    }
+  }
+
   .header-background {
     background-image: url("assets/images/bg_card_header.png");
   }
