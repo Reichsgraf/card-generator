@@ -1,4 +1,5 @@
-<div class="card card-shirt">
+<div class="card card-shirt" [style.height.px]="cardForm.get('format')?.value === '63,5 x 88' ? '468' : '503'">
+  <!--todo: in the name of all that is beautiful in the world, redone this part, please ^^-->
   <div class="shirt-background-container">
     @if (cardForm.get('image')?.value) {
       <img class="image" [src]="cardForm.get('image')?.value" alt="">

@@ -46,7 +46,8 @@ export class AppComponent {
       CHA: [10],
       description: ['<p class="ql-align-justify ql-indent-1"><strong>Stat:</strong> Dexterity</p><p class="ql-align-justify">Additional text.</p>'],
       keywords: ['<p class="ql-align-center"><strong>Keyword1</strong>, <strong>Keyword2</strong></p>'],
-      flavourText: ['<p><i>Up for a round of Gwent?</i></p>']
+      flavourText: ['<p><i>Up for a round of Gwent?</i></p>'],
+      format: ['63,5 x 88'],
     });
   }
 

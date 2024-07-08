@@ -190,6 +190,19 @@
     </div>
 
     <div class="section-line">
+      <h4>{{ 'content.formats' | translate }}</h4>
+      <div class="button-list" *ngIf="cardForm | getFormControl:'format' as formatControl">
+        <app-text-button [isActive]="formatControl.value === '63,5 x 88'" [text]="'63,5 x 88'"
+                         (click)="formatControl.setValue('63,5 x 88')">
+        </app-text-button>
+        <app-text-button [isActive]="formatControl.value === '65 x 100'" [text]="'65 x 100 (WIP)'"
+                         [matTooltip]="'BURN MY EYES IN THE NAME OF MAXIC'"
+                         (click)="formatControl.setValue('65 x 100')">
+        </app-text-button>
+      </div>
+    </div>
+
+    <div class="section-line">
       <h4>{{ 'content.templates' | translate }}</h4>
       <div class="button-list">
         <app-text-button [text]="'content.spell'" (click)="setSpellTemplate()"></app-text-button>

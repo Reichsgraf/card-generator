@@ -28,6 +28,7 @@
     "description": "Description",
     "keywords": "Keywords",
     "flavour-text": "Flavour Text",
+    "formats": "Formats",
     "templates": "Templates",
     "spell": "Spell",
     "npc": "Character"
