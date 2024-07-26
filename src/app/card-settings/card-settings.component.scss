@@ -9,10 +9,10 @@
 .card-settings {
   display: grid;
   padding: 45px 60px 60px;
-  gap: 40px;
+  gap: 30px 40px;
 
   :host-context(.desktop) & {
-    grid-template-columns: min-content 1fr;
+    grid-template-columns: 380px 1fr;
   }
 
   :host-context(.tablet) & {
@@ -22,6 +22,10 @@
   :host-context(.mobile) & {
     grid-template-columns: 1fr;
   }
+}
+
+:host-context(.desktop) .format-section  {
+  grid-column: span 2;
 }
 
 .section {
@@ -76,8 +80,8 @@
 
 .button-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 5px;
-  app-text-button .button { hyphens: auto; }
 }
 
 .cardback-list {

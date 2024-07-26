@@ -1,5 +1,5 @@
 import {Component, inject, Input, OnInit} from '@angular/core';
-import {FormGroup} from "@angular/forms";
+import {FormControl, FormGroup} from "@angular/forms";
 import {LangChangeEvent, TranslateService} from "@ngx-translate/core";
 import {map, Observable, startWith} from "rxjs";
 
@@ -12,6 +12,7 @@ export class CardContentComponent implements OnInit {
 
   translateService = inject(TranslateService);
 
+  @Input() formatControl!: FormControl;
   @Input() cardForm!: FormGroup;
 
   currentLocale$!: Observable<any>;

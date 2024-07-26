@@ -13,8 +13,21 @@
     height: 465px;
   }
 
-  &.gw-format {
-    height: 500px;
+  &.wh-format {
+    height: 556px;
+    border-radius: 5px;
+
+    .header {
+      flex-direction: column-reverse;
+
+      .title {
+        margin: 0;
+      }
+
+      .subtitle {
+        padding-top: 14px;
+      }
+    }
   }
 
   .frame {

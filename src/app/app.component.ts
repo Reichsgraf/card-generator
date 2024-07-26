@@ -1,5 +1,5 @@
 import {Component, ElementRef, inject, ViewChild} from '@angular/core';
-import {FormBuilder, FormGroup} from "@angular/forms";
+import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
 import * as htmlToImage from 'html-to-image';
 import {TranslateService} from "@ngx-translate/core";
 
@@ -16,12 +16,16 @@ export class AppComponent {
   @ViewChild('card') card!: ElementRef;
   @ViewChild('shirt') shirt!: ElementRef;
   @ViewChild('content') content!: ElementRef;
+  formatControl: FormControl;
   cardForm: FormGroup;
 
   constructor() {
     this.translateService.use(this.translateService.defaultLang);
 
+    this.formatControl = this.formBuilder.control('63,5 x 88');
+
     this.cardForm = this.formBuilder.group({
+      header: [''],
       mainFaction: ['N'],
       secondFaction: [''],
       frame: ['bronze'],
@@ -47,7 +51,6 @@ export class AppComponent {
       description: ['<p class="ql-align-justify ql-indent-1"><strong>Stat:</strong> Dexterity</p><p class="ql-align-justify">Additional text.</p>'],
       keywords: ['<p class="ql-align-center"><strong>Keyword1</strong>, <strong>Keyword2</strong></p>'],
       flavourText: ['<p><i>Up for a round of Gwent?</i></p>'],
-      format: ['63,5 x 88'],
     });
   }
 

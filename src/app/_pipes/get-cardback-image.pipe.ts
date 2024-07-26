@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {cardbackList} from "../_static/cardback-list";
+import {cardbackList, whCardbackList} from "../_static/cardback-list";
 
 @Pipe({
   name: 'getCardbackImage'
@@ -7,7 +7,7 @@ import {cardbackList} from "../_static/cardback-list";
 export class GetCardbackImagePipe implements PipeTransform {
 
   transform(cardbackName: string): string {
-    return cardbackList.find(item => item.name === cardbackName)?.icon || '';
+    return [...cardbackList, ...whCardbackList].find(item => item.name === cardbackName)?.icon || '';
   }
 
 }

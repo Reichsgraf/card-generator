@@ -1,12 +1,15 @@
-<app-card-settings [style.grid-area]="'s'" [cardForm]="cardForm"></app-card-settings>
+<app-card-settings [style.grid-area]="'s'"
+                   [formatControl]="formatControl"
+                   [cardForm]="cardForm">
+</app-card-settings>
 
 <div class="card-result" [style.grid-area]="'r'">
   <div class="card-content" #card>
     <div #shirt>
-      <app-card-shirt [cardForm]="cardForm"></app-card-shirt>
+      <app-card-shirt [formatControl]="formatControl" [cardForm]="cardForm"></app-card-shirt>
     </div>
     <div #content>
-      <app-card-content [cardForm]="cardForm"></app-card-content>
+      <app-card-content [formatControl]="formatControl" [cardForm]="cardForm"></app-card-content>
     </div>
   </div>
 

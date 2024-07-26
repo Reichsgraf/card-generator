@@ -1,6 +1,7 @@
 {
   "settings": {
     "language": "Язык",
+    "header": "Заголовок",
     "faction": "Основная фракция",
     "second-faction": "Втоостепенная фракция",
     "frame": "Рамка",
@@ -10,8 +11,11 @@
     "type": "Тип",
     "font-size": "Размер шрифта",
 
+
+    "spec-symbols": "Специальные символы",
     "tab-char": "Знак табуляции",
-    "multiplication-sign": "Знак умножения"
+    "multiplication-sign": "Знак умножения",
+    "action-symbol": "Знак действия"
   },
   "content": {
     "name": "Название карты",
