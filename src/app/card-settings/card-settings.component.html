@@ -1,4 +1,17 @@
 <div class="card-settings" [formGroup]="cardForm">
+  <div class="section-line format-section">
+    <h4>{{ 'content.formats' | translate }}</h4>
+    <div class="button-list">
+      <app-text-button [isActive]="formatControl.value === '63,5 x 88'" [text]="'63,5 x 88 (Gwent style)'"
+                       (click)="formatControl.setValue('63,5 x 88')">
+      </app-text-button>
+      <app-text-button [isActive]="formatControl.value === '70 x 120'" [text]="'70 x 120 (WH40k style)'"
+                       [matTooltip]="'BURN MY EYES IN THE NAME OF MAXIC'"
+                       (click)="set65100Format()">
+      </app-text-button>
+    </div>
+  </div>
+
   <div class="section icons">
     <div class="section-line">
       <h4>{{ 'settings.language' | translate }}</h4>
@@ -13,6 +26,20 @@
         }
       </div>
     </div>
+
+    @if (formatControl.value === '70 x 120') {
+      <div class="section-line">
+        <h4>{{ 'settings.header' | translate }}</h4>
+        <div class="button-list">
+          @for (header of headerList; track header) {
+            <app-text-button [text]="header.name"
+                             (click)="setHeader(header)"
+                             [isActive]="header.name === cardForm.get('header')?.value">
+            </app-text-button>
+          }
+        </div>
+      </div>
+    }
 
     <div class="section-line">
       <h4>{{ 'settings.faction' | translate }}</h4>
@@ -114,16 +141,6 @@
         <input type="number" formControlName="fontSize">
       </div>
     </div>
-
-    <div class="button-list" [style.justify-content]="'space-between'">
-      <app-text-button [text]="'settings.tab-char'" [cdkCopyToClipboard]="'ㅤ'"
-                       [matTooltip]="'This one as well as tab in text editor does not work in Mozilla'">
-      </app-text-button>
-
-      <app-text-button [text]="'settings.multiplication-sign'" [cdkCopyToClipboard]="'×'">
-      </app-text-button>
-    </div>
-
   </div>
 
   <div class="section">
@@ -190,23 +207,25 @@
     </div>
 
     <div class="section-line">
-      <h4>{{ 'content.formats' | translate }}</h4>
-      <div class="button-list" *ngIf="cardForm | getFormControl:'format' as formatControl">
-        <app-text-button [isActive]="formatControl.value === '63,5 x 88'" [text]="'63,5 x 88'"
-                         (click)="formatControl.setValue('63,5 x 88')">
-        </app-text-button>
-        <app-text-button [isActive]="formatControl.value === '65 x 100'" [text]="'65 x 100 (WIP)'"
-                         [matTooltip]="'BURN MY EYES IN THE NAME OF MAXIC'"
-                         (click)="formatControl.setValue('65 x 100')">
-        </app-text-button>
-      </div>
-    </div>
-
-    <div class="section-line">
       <h4>{{ 'content.templates' | translate }}</h4>
       <div class="button-list">
         <app-text-button [text]="'content.spell'" (click)="setSpellTemplate()"></app-text-button>
         <app-text-button [text]="'content.npc'" (click)="setCharacterTemplate()"></app-text-button>
+      </div>
+    </div>
+
+    <div class="section-line">
+      <h4>{{ 'settings.spec-symbols' | translate }}</h4>
+      <div class="button-list" [style.justify-content]="'space-between'">
+        <app-text-button [text]="'settings.tab-char'" [cdkCopyToClipboard]="'ㅤ'"
+                         [matTooltip]="'This one as well as tab in text editor does not work in Mozilla'">
+        </app-text-button>
+
+        <app-text-button [text]="'settings.multiplication-sign'" [cdkCopyToClipboard]="'×'">
+        </app-text-button>
+
+        <app-text-button [text]="'settings.action-symbol'" [cdkCopyToClipboard]="'🗲'">
+        </app-text-button>
       </div>
     </div>
   </div>

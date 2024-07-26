@@ -15,3 +15,13 @@ export const cardbackList: ListItem[] = [
   { name: 'elves', icon: 'assets/images/cardbacks/Elves.png'},
   { name: 'dryad', icon: 'assets/images/cardbacks/Dryad.png'},
 ];
+
+export const whCardbackList: ListItem[] = [
+  { name: 'wh-deployment', icon: 'assets/images/cardbacks-wh/deployment.png'},
+  { name: 'wh-mission-rule', icon: 'assets/images/cardbacks-wh/mission-rule.png'},
+  { name: 'wh-primary-mission', icon: 'assets/images/cardbacks-wh/primary-mission.png'},
+  { name: 'wh-secondary-mission-attacker', icon: 'assets/images/cardbacks-wh/secondary-mission-attacker.png'},
+  { name: 'wh-secondary-mission-defender', icon: 'assets/images/cardbacks-wh/secondary-mission-defender.png'},
+  { name: 'wh-secret-mission-attacker', icon: 'assets/images/cardbacks-wh/secret-mission-attacker.png'},
+  { name: 'wh-secret-mission-defender', icon: 'assets/images/cardbacks-wh/secret-mission-defender.png'},
+];

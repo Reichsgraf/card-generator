@@ -5,9 +5,10 @@ import {ListItem} from "../_interfaces/list-item";
 import {frameList} from "../_static/frame-list";
 import {rarityList} from "../_static/rarity-list";
 import {typeList} from "../_static/type-list";
-import {cardbackList} from "../_static/cardback-list";
+import {cardbackList, whCardbackList} from "../_static/cardback-list";
 import {languageList} from "../_static/language-list";
 import {TranslateService} from "@ngx-translate/core";
+import {headerList} from "../_static/header-list";
 
 @Component({
   selector: 'app-card-settings',
@@ -19,19 +20,25 @@ export class CardSettingsComponent {
 
   translateService = inject(TranslateService);
 
+  @Input() formatControl!: FormControl;
   @Input() cardForm!: FormGroup;
   languageControl: FormControl = new FormControl('en');
 
   languageList = languageList;
+  headerList = headerList;
   factionList = factionList;
   frameList = frameList;
   rarityList = rarityList;
   typeList = typeList;
-  cardbackList = cardbackList;
+  cardbackList = [...cardbackList, ...whCardbackList];
 
   setLanguage(language: ListItem) {
     this.languageControl.setValue(language.name);
     this.translateService.use(language.name);
+  }
+
+  setHeader(header: ListItem) {
+    this.setFormField('header', header.name);
   }
 
   setMainFaction(faction: ListItem) {
@@ -124,6 +131,12 @@ export class CardSettingsComponent {
 
   toggleStat() {
     this.cardForm.get('showStats')?.setValue(!this.cardForm.get('showStats')?.value);
+  }
+
+  set65100Format() {
+    this.formatControl.setValue('70 x 120');
+    this.cardForm.get('type')?.setValue('');
+    this.cardForm.get('provision')?.setValue('');
   }
 
 }

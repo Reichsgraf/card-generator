@@ -1,22 +1,23 @@
-<div class="card" [lang]="currentLocale$ | async"
-     [ngClass]="{
-        'poker-format': cardForm.get('format')?.value === '63,5 x 88',
-        'gw-format': cardForm.get('format')?.value !== '63,5 x 88'
-     }">
-  <!--todo: in the name of all that is beautiful in the world, redone this part, please ^^-->
+<div class="card" [ngClass]="formatControl.value | getCardHeight" [lang]="currentLocale$ | async">
   <!--<img class="frame" [src]="cardForm.get('frame')?.value | getFrameImage:true" alt="">-->
 
   <div class="header-background">
     <div class="header">
-      <img [src]="cardForm.get('mainFaction')?.value | getFactionHeader" alt="">
-      @if (cardForm.get('secondFaction')?.value) {
-        <img [src]="cardForm.get('secondFaction')?.value | getSubFactionHeader" alt="">
+      @if (formatControl.value === '70 x 120' && cardForm.get('header')?.value) {
+        <img [src]="cardForm.get('header')?.value | getHeader" alt="">
+      } @else {
+        <img [src]="cardForm.get('mainFaction')?.value | getFactionHeader" alt="">
+        @if (cardForm.get('secondFaction')?.value) {
+          <img [src]="cardForm.get('secondFaction')?.value | getSubFactionHeader" alt="">
+        }
       }
       <span class="title">{{cardForm.get('name')?.value}}</span>
       <span class="subtitle">{{cardForm.get('categories')?.value}}</span>
     </div>
   </div>
-  <div class="content-background" [style.font-size]="cardForm.get('fontSize')?.value + 'px'">
+  <div class="content-background"
+       [style.font-size]="cardForm.get('fontSize')?.value + 'px'"
+       [style.background-image]="formatControl.value | getContentBackground">
     <div class="content description" [innerHTML]="description">
     </div>
 
@@ -27,12 +28,14 @@
 
     @if (cardForm.get('flavourText')?.value; as flavorText) {
       <img class="divider" [ngSrc]="'assets/images/divider.png'" [height]="3" [width]="323" alt="">
-      <div class="footer-background-1">
+      <div class="footer-background-1"
+           [style.background-image]="formatControl.value | getContentBackground">
         <div class="content" [innerHTML]="flavorText"></div>
       </div>
     }
   </div>
 
-  <div class="footer-background-2"></div>
+  <div class="footer-background-2"
+       [style.background-image]="formatControl.value | getFooterBackground"></div>
 </div>
 

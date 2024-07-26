@@ -27,6 +27,10 @@ import {MatTooltipModule} from "@angular/material/tooltip";
 import {QuillEditorToolbar} from "./_utility/quill-rich-text-editor";
 import {GetFormControlPipe} from "./_pipes/get-form-control.pipe";
 import {TextEditorComponent} from "./text-editor/text-editor.component";
+import {GetCardHeightPipe} from "./_pipes/get-card-height.pipe";
+import {GetHeaderPipe} from "./_pipes/get-header.pipe";
+import {GetContentBackgroundPipe} from "./_pipes/get-content-background.pipe";
+import {GetFooterBackgroundPipe} from "./_pipes/get-footer-background.pipe";
 
 @NgModule({
   declarations: [
@@ -45,6 +49,10 @@ import {TextEditorComponent} from "./text-editor/text-editor.component";
     GetProvisionFontSizePipe,
     GetTypeImagePipe,
     GetCardbackImagePipe,
+    GetCardHeightPipe,
+    GetHeaderPipe,
+    GetContentBackgroundPipe,
+    GetFooterBackgroundPipe
   ],
   imports: [
     BrowserModule,

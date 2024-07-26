@@ -1,6 +1,7 @@
 {
   "settings": {
     "language": "Language",
+    "header": "Header",
     "faction": "Faction",
     "second-faction": "Second Faction",
     "frame": "Frame",
@@ -10,8 +11,10 @@
     "type": "Type",
     "font-size": "Font Size",
 
+    "spec-symbols": "Special Symbols",
     "tab-char": "Tab Character",
-    "multiplication-sign": "Multiplication Sign"
+    "multiplication-sign": "Multiplication Sign",
+    "action-symbol": "Action Symbol"
   },
   "content": {
     "name": "Card Name",
