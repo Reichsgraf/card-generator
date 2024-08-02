@@ -1,7 +1,8 @@
 import {Component, ElementRef, inject, ViewChild} from '@angular/core';
-import {FormBuilder, FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup} from "@angular/forms";
 import * as htmlToImage from 'html-to-image';
 import {TranslateService} from "@ngx-translate/core";
+import {CardForm} from "./_interfaces/card-form";
 
 @Component({
   selector: 'app-root',
@@ -11,46 +12,54 @@ import {TranslateService} from "@ngx-translate/core";
 export class AppComponent {
 
   translateService = inject(TranslateService);
-  formBuilder = inject(FormBuilder);
 
   @ViewChild('card') card!: ElementRef;
   @ViewChild('shirt') shirt!: ElementRef;
   @ViewChild('content') content!: ElementRef;
-  formatControl: FormControl;
-  cardForm: FormGroup;
+  formatControl: FormControl<string>;
+  cardForm: FormGroup<CardForm>;
 
   constructor() {
     this.translateService.use(this.translateService.defaultLang);
 
-    this.formatControl = this.formBuilder.control('63,5 x 88');
+    this.formatControl = new FormControl<string>('63,5 x 88', { nonNullable: true });
 
-    this.cardForm = this.formBuilder.group({
-      header: [''],
-      mainFaction: ['N'],
-      secondFaction: [''],
-      frame: ['bronze'],
-      rarity: ['common'],
+    this.cardForm = new FormGroup<CardForm>({
+      header: new FormControl<string>('', { nonNullable: true }),
+      mainFaction: new FormControl<string>('N', { nonNullable: true }),
+      secondFaction: new FormControl<string>('', { nonNullable: true }),
+      frame: new FormControl<string>('bronze', { nonNullable: true }),
+      rarity: new FormControl<string>('common', { nonNullable: true }),
 
-      image: [null],
-      power: ['1'],
-      armor: [''],
-      provision: ['6'],
-      fontSize: [16],
-      cardback: [''],
-      type: ['unit'],
+      image: new FormControl<any>(null),
+      power:  new FormControl<string>('1', { nonNullable: true }),
+      armor:  new FormControl<string>('', { nonNullable: true }),
+      provision:  new FormControl<string>('6', { nonNullable: true }),
+      fontSize:  new FormControl<number>(16, { nonNullable: true }),
+      cardback:  new FormControl<string>('', { nonNullable: true }),
+      type:  new FormControl<string>('unit', { nonNullable: true }),
 
-      name: ['Card Name'],
-      categories: ['Human'],
-      showStats: [false],
-      STR: [10],
-      DEX: [10],
-      CON: [10],
-      INT: [10],
-      WIS: [10],
-      CHA: [10],
-      description: ['<p class="ql-align-justify ql-indent-1"><strong>Stat:</strong> Dexterity</p><p class="ql-align-justify">Additional text.</p>'],
-      keywords: ['<p class="ql-align-center"><strong>Keyword1</strong>, <strong>Keyword2</strong></p>'],
-      flavourText: ['<p><i>Up for a round of Gwent?</i></p>'],
+      name: new FormControl<string>('Card Name', { nonNullable: true }),
+      categories: new FormControl<string>('Human', { nonNullable: true }),
+      showStats: new FormControl<boolean>(false, { nonNullable: true }),
+      STR: new FormControl<number>(10, { nonNullable: true }),
+      DEX: new FormControl<number>(10, { nonNullable: true }),
+      CON: new FormControl<number>(10, { nonNullable: true }),
+      INT: new FormControl<number>(10, { nonNullable: true }),
+      WIS: new FormControl<number>(10, { nonNullable: true }),
+      CHA: new FormControl<number>(10, { nonNullable: true }),
+      description: new FormControl<string>(
+        '<p class="ql-align-justify ql-indent-1"><strong>Stat:</strong> Dexterity</p><p class="ql-align-justify">Additional text.</p>',
+        { nonNullable: true }
+      ),
+      keywords: new FormControl<string>(
+        '<p class="ql-align-center"><strong>Keyword1</strong>, <strong>Keyword2</strong></p>',
+        { nonNullable: true }
+      ),
+      flavourText: new FormControl<string>(
+        '<p><i>Up for a round of Gwent?</i></p>',
+        { nonNullable: true }
+      ),
     });
   }
 
@@ -62,7 +71,7 @@ export class AppComponent {
       .then(canvas => {
         const downloadLink = document.createElement('a');
         downloadLink.href = canvas;
-        downloadLink.download = `${this.cardForm.get('name')?.value || 'card'}.png`;
+        downloadLink.download = `${this.cardForm.value.name || 'card'}.png`;
         downloadLink.click();
         downloadLink.remove();
       })

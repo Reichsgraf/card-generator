@@ -16,7 +16,7 @@ import {NgOptimizedImage} from "@angular/common";
 })
 export class TextEditorComponent {
 
-  @Input() control!: FormControl;
+  @Input() control!: FormControl<string>;
   quillEditorRef: any;
 
   getEditorInstance(editorInstance: any) {

@@ -1,40 +1,40 @@
 <div class="card card-shirt" [ngClass]="formatControl.value | getCardHeight">
   <div class="shirt-background-container">
-    @if (cardForm.get('image')?.value) {
-      <img class="image" [src]="cardForm.get('image')?.value" alt="">
+    @if (cardForm.value.image) {
+      <img class="image" [src]="cardForm.value.image" alt="">
     }
   </div>
 
-  @if (cardForm.get('cardback')?.value) {
-    <img class="frame" [src]="cardForm.get('cardback')?.value | getCardbackImage" alt="">
+  @if (cardForm.value.cardback) {
+    <img class="frame" [src]="cardForm.value.cardback | getCardbackImage" alt="">
   } @else {
-    <img class="frame" [src]="cardForm.get('frame')?.value | getFrameImage:false" alt="">
+    <img class="frame" [src]="cardForm.value.frame | getFrameImage:false" alt="">
   }
 
-  @if (cardForm.get('type')?.value) {
-    <img class="power-banner" [src]="cardForm.get('mainFaction')?.value | getBannerImage" alt="">
+  @if (cardForm.value.type) {
+    <img class="power-banner" [ngSrc]="cardForm.value.mainFaction | getBannerImage" fill alt="">
 
-    <img class="rarity" [src]="cardForm.get('rarity')?.value | getRarityImage" alt="">
+    <img class="rarity" [ngSrc]="cardForm.value.rarity | getRarityImage" fill alt="">
   }
 
-  @if (cardForm.get('type')?.value === 'unit') {
-    <div class="power">{{cardForm.get('power')?.value}}</div>
-  } @else if (cardForm.get('type')?.value) {
-    <img class="type" [src]="cardForm.get('type')?.value | getTypeImage" alt="">
+  @if (cardForm.value.type === 'unit') {
+    <div class="power">{{cardForm.value.power}}</div>
+  } @else if (cardForm.value.type) {
+    <img class="type" [ngSrc]="cardForm.value.type | getTypeImage" fill alt="">
   }
 
-  @if (cardForm.get('armor')?.value) {
-    <img class="armor-banner" [src]="'assets/images/armor_banner.png'" alt="">
+  @if (cardForm.value.armor) {
+    <img class="armor-banner" [ngSrc]="'assets/images/armor_banner.png'" fill alt="">
 
-    <div class="armor">{{cardForm.get('armor')?.value}}</div>
+    <div class="armor">{{cardForm.value.armor}}</div>
   }
 
-  @if (cardForm.get('provision')?.value) {
-    <img class="provision-head" [src]="'assets/images/provision_banner_head.png'" alt="">
-    <img class="provision-banner" [src]="cardForm.get('mainFaction')?.value | getProvisionBannerImage" alt="">
+  @if (cardForm.value.provision) {
+    <img class="provision-head" [ngSrc]="'assets/images/provision_banner_head.png'" fill alt="">
+    <img class="provision-banner" [ngSrc]="cardForm.value.mainFaction | getProvisionBannerImage" fill alt="">
 
-    <div class="provision" [style.font-size]="cardForm.get('provision')?.value | getProvisionFontSize">
-      {{cardForm.get('provision')?.value}}
+    <div class="provision" [style.font-size]="cardForm.value.provision | getProvisionFontSize">
+      {{cardForm.value.provision}}
     </div>
   }
 </div>

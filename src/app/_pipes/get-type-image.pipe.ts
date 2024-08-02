@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class GetTypeImagePipe implements PipeTransform {
 
-  transform(typeName: string): string {
+  transform(typeName: string = ''): string {
     return `assets/images/${typeName}.png`;
   }
 

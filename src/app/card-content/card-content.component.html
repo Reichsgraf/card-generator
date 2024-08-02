@@ -4,11 +4,11 @@
   <div class="header-background">
     <div class="header">
       @if (formatControl.value === '70 x 120' && cardForm.get('header')?.value) {
-        <img [src]="cardForm.get('header')?.value | getHeader" alt="">
+        <img [src]="cardForm.value.header | getHeader" alt="">
       } @else {
-        <img [src]="cardForm.get('mainFaction')?.value | getFactionHeader" alt="">
+        <img [src]="cardForm.value.mainFaction | getFactionHeader" alt="">
         @if (cardForm.get('secondFaction')?.value) {
-          <img [src]="cardForm.get('secondFaction')?.value | getSubFactionHeader" alt="">
+          <img [src]="cardForm.value.secondFaction | getSubFactionHeader" alt="">
         }
       }
       <span class="title">{{cardForm.get('name')?.value}}</span>

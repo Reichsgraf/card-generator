@@ -9,6 +9,7 @@ import {cardbackList, whCardbackList} from "../_static/cardback-list";
 import {languageList} from "../_static/language-list";
 import {TranslateService} from "@ngx-translate/core";
 import {headerList} from "../_static/header-list";
+import {CardForm} from "../_interfaces/card-form";
 
 @Component({
   selector: 'app-card-settings',
@@ -20,9 +21,9 @@ export class CardSettingsComponent {
 
   translateService = inject(TranslateService);
 
-  @Input() formatControl!: FormControl;
-  @Input() cardForm!: FormGroup;
-  languageControl: FormControl = new FormControl('en');
+  @Input() formatControl!: FormControl<string>;
+  @Input() cardForm!: FormGroup<CardForm>;
+  languageControl: FormControl<string> = new FormControl<string>('en', { nonNullable: true });
 
   languageList = languageList;
   headerList = headerList;
@@ -102,9 +103,9 @@ export class CardSettingsComponent {
     this.cardForm.get('fontSize')?.setValue(14);
 
     this.cardForm.get('type')?.setValue('unit');
-    this.cardForm.get('power')?.setValue(4);
-    this.cardForm.get('armor')?.setValue(10);
-    this.cardForm.get('provision')?.setValue(0);
+    this.cardForm.get('power')?.setValue('4');
+    this.cardForm.get('armor')?.setValue('10');
+    this.cardForm.get('provision')?.setValue('');
 
     this.cardForm.get('name')?.setValue('Обыватель');
     this.cardForm.get('categories')?.setValue('Средний гуманоид');
@@ -130,10 +131,10 @@ export class CardSettingsComponent {
   }
 
   toggleStat() {
-    this.cardForm.get('showStats')?.setValue(!this.cardForm.get('showStats')?.value);
+    this.cardForm.get('showStats')?.setValue(!this.cardForm.value.showStats);
   }
 
-  set65100Format() {
+  set70120Format() {
     this.formatControl.setValue('70 x 120');
     this.cardForm.get('type')?.setValue('');
     this.cardForm.get('provision')?.setValue('');

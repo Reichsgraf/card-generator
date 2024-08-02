@@ -7,7 +7,7 @@
       </app-text-button>
       <app-text-button [isActive]="formatControl.value === '70 x 120'" [text]="'70 x 120 (WH40k style)'"
                        [matTooltip]="'BURN MY EYES IN THE NAME OF MAXIC'"
-                       (click)="set65100Format()">
+                       (click)="set70120Format()">
       </app-text-button>
     </div>
   </div>
@@ -34,7 +34,7 @@
           @for (header of headerList; track header) {
             <app-text-button [text]="header.name"
                              (click)="setHeader(header)"
-                             [isActive]="header.name === cardForm.get('header')?.value">
+                             [isActive]="header.name === cardForm.value.header">
             </app-text-button>
           }
         </div>
@@ -48,7 +48,7 @@
           @if (faction.name) {
             <app-icon-button [item]="faction"
                              (click)="setMainFaction(faction)"
-                             [isActive]="faction.name === cardForm.get('mainFaction')?.value">
+                             [isActive]="faction.name === cardForm.value.mainFaction">
             </app-icon-button>
           }
         }
@@ -62,7 +62,7 @@
           @if (faction.name !== 'N') {
             <app-icon-button [item]="faction"
                              (click)="setSecondFaction(faction)"
-                             [isActive]="faction.name === cardForm.get('secondFaction')?.value">
+                             [isActive]="faction.name === cardForm.value.secondFaction">
             </app-icon-button>
           }
         }
@@ -76,7 +76,7 @@
           @for (frame of frameList; track frame) {
             <app-icon-button [item]="frame" [imageHeight]="30" [imageWidth]="30"
                              (click)="setFrame(frame)"
-                             [isActive]="frame.name === cardForm.get('frame')?.value">
+                             [isActive]="frame.name === cardForm.value.frame">
             </app-icon-button>
           }
         </div>
@@ -88,7 +88,7 @@
           @for (rarity of rarityList; track rarity) {
             <app-icon-button [item]="rarity" [imageHeight]="25" [imageWidth]="25"
                              (click)="setRarity(rarity)"
-                             [isActive]="rarity.name === cardForm.get('rarity')?.value">
+                             [isActive]="rarity.name === cardForm.value.rarity">
             </app-icon-button>
           }
         </div>
@@ -105,7 +105,7 @@
         @for (cardback of cardbackList; track cardback; let index = $index) {
           <app-icon-button *ngIf="index" [item]="cardback" [imageHeight]="30" [imageWidth]="25"
                            (click)="setCardback(cardback)"
-                           [isActive]="cardback.name === cardForm.get('cardback')?.value">
+                           [isActive]="cardback.name === cardForm.value.cardback">
           </app-icon-button>
         }
       </div>
@@ -117,7 +117,7 @@
         @for (type of typeList; track type) {
           <app-icon-button *ngIf="type.name !== 'N'" [item]="type"
                            (click)="setType(type)"
-                           [isActive]="type.name === cardForm.get('type')?.value">
+                           [isActive]="type.name === cardForm.value.type">
           </app-icon-button>
         }
       </div>
@@ -159,10 +159,10 @@
         {{ 'content.stats' | translate }}
         <app-icon-button (click)="toggleStat()" [item]="factionList[1]"
                          [imageHeight]="18" [imageWidth]="18"
-                         [isActive]="cardForm.get('showStats')?.value">
+                         [isActive]="cardForm.value.showStats || false">
         </app-icon-button>
       </h4>
-      @if (cardForm.get('showStats')?.value) {
+      @if (cardForm.value.showStats) {
         <div class="stats">
           <div class="stat">
             <span>{{ 'content.stat-name.strength' | translate }}</span><input formControlName="STR" type="number">
@@ -188,8 +188,6 @@
 
     <div class="section-line">
       <h4>{{ 'content.description' | translate }}</h4>
-      <!--<quill-editor class="main-description" formControlName="description">
-      </quill-editor>-->
       <app-text-editor class="main-description" [control]="cardForm | getFormControl:'description'">
       </app-text-editor>
     </div>
