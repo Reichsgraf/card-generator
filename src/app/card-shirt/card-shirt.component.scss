@@ -56,23 +56,7 @@
     height: auto !important;
   }
 
-  .provision-head {
-    z-index: 4;
-    top: 71% !important;
-    left: 79% !important;
-    width: 17% !important;
-    height: auto !important;
-  }
-
-  .provision-banner {
-    z-index: 4;
-    top: 82.5% !important;
-    left: 79% !important;
-    width: 17% !important;
-    height: 15% !important;
-  }
-
-  .power, .armor, .provision {
+  .power, .armor, .provision-container {
     z-index: 4;
     font-size: 75px;
     display: flex;
@@ -83,7 +67,7 @@
     font-weight: 700;
     font-family: Gwent, fantasy;
     text-shadow: 1px 0 3px black, -1px 0 3px black,
-                 0 1px 3px black, 0 -1px 3px black,;
+                 0 1px 3px black, 0 -1px 3px black;
   }
 
   .power {
@@ -100,13 +84,31 @@
     width: 97.5px;
   }
 
-  .provision {
+  .provision-container {
+    display: flex;
+    flex-direction: column;
     bottom: 0;
     right: 0;
     margin: 0 13px 12px 0;
     width: 55.25px;
-    height: 70.19px;
     font-size: 65px;
+
+    .provision-head {
+      position: initial !important;
+      z-index: 4;
+    }
+
+    .provision-banner {
+      position: initial !important;
+      z-index: 4;
+      height: 70.19px !important;
+    }
+
+    .provision {
+      position: absolute;
+      z-index: 5;
+      bottom: 5px;
+    }
   }
 
   .rarity {

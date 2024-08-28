@@ -30,11 +30,12 @@
   }
 
   @if (cardForm.value.provision) {
-    <img class="provision-head" [ngSrc]="'assets/images/provision_banner_head.png'" fill alt="">
-    <img class="provision-banner" [ngSrc]="cardForm.value.mainFaction | getProvisionBannerImage" fill alt="">
-
-    <div class="provision" [style.font-size]="cardForm.value.provision | getProvisionFontSize">
-      {{cardForm.value.provision}}
+    <div class="provision-container">
+      <img class="provision-head" [ngSrc]="'assets/images/provision_banner_head.png'" fill alt="">
+      <img class="provision-banner" [ngSrc]="cardForm.value.mainFaction | getProvisionBannerImage" fill alt="">
+      <div class="provision" [style.font-size]="cardForm.value.provision | getProvisionFontSize">
+        {{cardForm.value.provision}}
+      </div>
     </div>
   }
 </div>
