@@ -3,30 +3,30 @@
 
   <div class="header-background">
     <div class="header">
-      @if (formatControl.value === '70 x 120' && cardForm.get('header')?.value) {
-        <img [src]="cardForm.get('header')?.value | getHeader" alt="">
+      @if (formatControl.value === '70 x 120' && cardForm.value.header) {
+        <img [src]="cardForm.value.header | getHeader" alt="">
       } @else {
-        <img [src]="cardForm.get('mainFaction')?.value | getFactionHeader" alt="">
-        @if (cardForm.get('secondFaction')?.value) {
-          <img [src]="cardForm.get('secondFaction')?.value | getSubFactionHeader" alt="">
+        <img [src]="cardForm.value.mainFaction | getFactionHeader" alt="">
+        @if (cardForm.value.secondFaction) {
+          <img [src]="cardForm.value.secondFaction | getSubFactionHeader" alt="">
         }
       }
-      <span class="title">{{cardForm.get('name')?.value}}</span>
-      <span class="subtitle">{{cardForm.get('categories')?.value}}</span>
+      <span class="title">{{cardForm.value.name}}</span>
+      <span class="subtitle">{{cardForm.value.categories}}</span>
     </div>
   </div>
   <div class="content-background"
-       [style.font-size]="cardForm.get('fontSize')?.value + 'px'"
+       [style.font-size]="cardForm.value.fontSize + 'px'"
        [style.background-image]="formatControl.value | getContentBackground">
     <div class="content description" [innerHTML]="description">
     </div>
 
-    @if (cardForm.get('keywords')?.value; as keywords) {
+    @if (cardForm.value.keywords; as keywords) {
       <img class="separator" [ngSrc]="'assets/images/separator.png'" [height]="19" [width]="228" alt="">
       <div class="content" [innerHTML]="keywords"></div>
     }
 
-    @if (cardForm.get('flavourText')?.value; as flavorText) {
+    @if (cardForm.value.flavourText; as flavorText) {
       <img class="divider" [ngSrc]="'assets/images/divider.png'" [height]="3" [width]="323" alt="">
       <div class="footer-background-1"
            [style.background-image]="formatControl.value | getContentBackground">

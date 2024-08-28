@@ -6,7 +6,7 @@ import {cardbackList, whCardbackList} from "../_static/cardback-list";
 })
 export class GetCardbackImagePipe implements PipeTransform {
 
-  transform(cardbackName: string): string {
+  transform(cardbackName: string = ''): string {
     return [...cardbackList, ...whCardbackList].find(item => item.name === cardbackName)?.icon || '';
   }
 

@@ -6,7 +6,7 @@ import {rarityList} from "../_static/rarity-list";
 })
 export class GetRarityImagePipe implements PipeTransform {
 
-  transform(rarityValue: string): string {
+  transform(rarityValue: string = ''): string {
     return rarityList.find(item => item.name === rarityValue)?.icon || '';
   }
 

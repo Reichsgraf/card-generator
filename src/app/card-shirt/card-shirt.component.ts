@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {FormControl, FormGroup} from "@angular/forms";
+import {CardForm} from "../_interfaces/card-form";
 
 @Component({
   selector: 'app-card-shirt',
@@ -8,7 +9,7 @@ import {FormControl, FormGroup} from "@angular/forms";
 })
 export class CardShirtComponent {
 
-  @Input() formatControl!: FormControl;
-  @Input() cardForm!: FormGroup;
+  @Input() formatControl!: FormControl<string>;
+  @Input() cardForm!: FormGroup<CardForm>;
 
 }

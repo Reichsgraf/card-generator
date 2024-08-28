@@ -6,7 +6,7 @@ import {headerList} from "../_static/header-list";
 })
 export class GetHeaderPipe implements PipeTransform {
 
-  transform(header: string): string {
+  transform(header: string = ''): string {
     return headerList.find(existedHeader => existedHeader.name === header)?.icon || '';
   }
 
