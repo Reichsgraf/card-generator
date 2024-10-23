@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'getProvisionFontSize'
+    name: 'getProvisionFontSize',
+    standalone: true
 })
 export class GetProvisionFontSizePipe implements PipeTransform {
 

@@ -3,11 +3,20 @@ import {FormControl, FormGroup} from "@angular/forms";
 import {LangChangeEvent, TranslateService} from "@ngx-translate/core";
 import {map, Observable, startWith} from "rxjs";
 import {CardForm} from "../_interfaces/card-form";
+import { GetFooterBackgroundPipe } from '../_pipes/get-footer-background.pipe';
+import { GetContentBackgroundPipe } from '../_pipes/get-content-background.pipe';
+import { GetHeaderPipe } from '../_pipes/get-header.pipe';
+import { GetCardHeightPipe } from '../_pipes/get-card-height.pipe';
+import { GetSubFactionHeaderPipe } from '../_pipes/get-sub-faction-header.pipe';
+import { GetFactionHeaderPipe } from '../_pipes/get-faction-header.pipe';
+import { NgClass, NgOptimizedImage, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-card-content',
-  templateUrl: './card-content.component.html',
-  styleUrls: ['./card-content.component.scss']
+    selector: 'app-card-content',
+    templateUrl: './card-content.component.html',
+    styleUrls: ['./card-content.component.scss'],
+    standalone: true,
+    imports: [NgClass, NgOptimizedImage, AsyncPipe, GetFactionHeaderPipe, GetSubFactionHeaderPipe, GetCardHeightPipe, GetHeaderPipe, GetContentBackgroundPipe, GetFooterBackgroundPipe]
 })
 export class CardContentComponent implements OnInit {
 
@@ -16,7 +25,7 @@ export class CardContentComponent implements OnInit {
   @Input() formatControl!: FormControl<string>;
   @Input() cardForm!: FormGroup<CardForm>;
 
-  currentLocale$!: Observable<any>;
+  currentLocale$!: Observable<string>;
 
   ngOnInit() {
     this.currentLocale$ = this.translateService.onLangChange.pipe(

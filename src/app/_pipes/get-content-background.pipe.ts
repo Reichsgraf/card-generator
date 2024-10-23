@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'getContentBackground'
+    name: 'getContentBackground',
+    standalone: true
 })
 export class GetContentBackgroundPipe implements PipeTransform {
 

@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import {cardbackList, whCardbackList} from "../_static/cardback-list";
 
 @Pipe({
-  name: 'getCardbackImage'
+    name: 'getCardbackImage',
+    standalone: true
 })
 export class GetCardbackImagePipe implements PipeTransform {
 

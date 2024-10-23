@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'getBannerImage'
+    name: 'getBannerImage',
+    standalone: true
 })
 export class GetBannerImagePipe implements PipeTransform {
 

@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import {rarityList} from "../_static/rarity-list";
 
 @Pipe({
-  name: 'getRarityImage'
+    name: 'getRarityImage',
+    standalone: true
 })
 export class GetRarityImagePipe implements PipeTransform {
 

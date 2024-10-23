@@ -1,21 +1,30 @@
 import {ChangeDetectionStrategy, Component, inject, Input} from '@angular/core';
 import {factionList} from "../_static/faction-list";
-import {FormControl, FormGroup} from "@angular/forms";
+import { FormControl, FormGroup, ReactiveFormsModule } from "@angular/forms";
 import {ListItem} from "../_interfaces/list-item";
 import {frameList} from "../_static/frame-list";
 import {rarityList} from "../_static/rarity-list";
 import {typeList} from "../_static/type-list";
 import {cardbackList, whCardbackList} from "../_static/cardback-list";
 import {languageList} from "../_static/language-list";
-import {TranslateService} from "@ngx-translate/core";
+import { TranslateService, TranslateModule } from "@ngx-translate/core";
 import {headerList} from "../_static/header-list";
 import {CardForm} from "../_interfaces/card-form";
+import { GetFormControlPipe } from '../_pipes/get-form-control.pipe';
+import { ClipboardModule } from '@angular/cdk/clipboard';
+import { TextEditorComponent } from '../text-editor/text-editor.component';
+import { NgIf, NgOptimizedImage } from '@angular/common';
+import { IconButtonComponent } from '../icon-button/icon-button.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { TextButtonComponent } from '../text-button/text-button.component';
 
 @Component({
-  selector: 'app-card-settings',
-  templateUrl: './card-settings.component.html',
-  styleUrls: ['./card-settings.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'app-card-settings',
+    templateUrl: './card-settings.component.html',
+    styleUrls: ['./card-settings.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
+    imports: [ReactiveFormsModule, TextButtonComponent, MatTooltipModule, IconButtonComponent, NgIf, NgOptimizedImage, TextEditorComponent, ClipboardModule, TranslateModule, GetFormControlPipe]
 })
 export class CardSettingsComponent {
 

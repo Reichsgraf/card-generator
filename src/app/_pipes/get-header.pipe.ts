@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import {headerList} from "../_static/header-list";
 
 @Pipe({
-  name: 'getHeader',
+    name: 'getHeader',
+    standalone: true,
 })
 export class GetHeaderPipe implements PipeTransform {
 
