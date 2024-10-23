@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'getFrameImage'
+    name: 'getFrameImage',
+    standalone: true
 })
 export class GetFrameImagePipe implements PipeTransform {
 

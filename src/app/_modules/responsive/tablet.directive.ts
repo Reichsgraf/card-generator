@@ -3,7 +3,8 @@ import {Subscription} from "rxjs";
 import {ResponsiveService} from "./responsive.service";
 
 @Directive({
-  selector: '[tablet]'
+    selector: '[tablet]',
+    standalone: true
 })
 export class TabletDirective implements AfterViewInit, OnDestroy {
 

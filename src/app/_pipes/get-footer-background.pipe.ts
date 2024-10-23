@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'getFooterBackground'
+    name: 'getFooterBackground',
+    standalone: true
 })
 export class GetFooterBackgroundPipe implements PipeTransform {
 

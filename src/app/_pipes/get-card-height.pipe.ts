@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import {formatList} from "../_static/format-list";
 
 @Pipe({
-  name: 'getCardHeight'
+    name: 'getCardHeight',
+    standalone: true
 })
 export class GetCardHeightPipe implements PipeTransform {
 

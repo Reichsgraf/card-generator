@@ -3,14 +3,22 @@ import {FormControl, FormGroup} from "@angular/forms";
 import * as htmlToImage from 'html-to-image';
 import {TranslateService} from "@ngx-translate/core";
 import {CardForm} from "./_interfaces/card-form";
+import { TextButtonComponent } from './text-button/text-button.component';
+import { CardContentComponent } from './card-content/card-content.component';
+import { CardShirtComponent } from './card-shirt/card-shirt.component';
+import { CardSettingsComponent } from './card-settings/card-settings.component';
+import {ResponsiveService} from "./_modules/responsive/responsive.service";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    standalone: true,
+    imports: [CardSettingsComponent, CardShirtComponent, CardContentComponent, TextButtonComponent]
 })
 export class AppComponent {
 
+  responsiveService = inject(ResponsiveService);
   translateService = inject(TranslateService);
 
   @ViewChild('card') card!: ElementRef;
@@ -20,6 +28,7 @@ export class AppComponent {
   cardForm: FormGroup<CardForm>;
 
   constructor() {
+    this.responsiveService.checkResponsiveFormat('DESKTOP');
     this.translateService.use(this.translateService.defaultLang);
 
     this.formatControl = new FormControl<string>('63,5 x 88', { nonNullable: true });

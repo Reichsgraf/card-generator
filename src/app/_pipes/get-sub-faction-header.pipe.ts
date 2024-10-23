@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'getSubFactionHeader'
+    name: 'getSubFactionHeader',
+    standalone: true
 })
 export class GetSubFactionHeaderPipe implements PipeTransform {
 
