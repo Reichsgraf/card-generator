@@ -69,6 +69,8 @@ SEE LICENSE IN LICENSE
 @ngx-translate/http-loader
 SEE LICENSE IN LICENSE
 
+card-generator
+
 eventemitter3
 MIT
 The MIT License (MIT)
