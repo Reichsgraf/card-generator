@@ -8,14 +8,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { NgOptimizedImage } from '@angular/common';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import { ResponsiveService } from './app/_modules/responsive/responsive.service';
-import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
-import {HttpClient, provideHttpClient} from "@angular/common/http";
-import {TranslateHttpLoader} from "@ngx-translate/http-loader";
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http,
-    './assets/i18n/',
-    '.json');
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 bootstrapApplication(AppComponent, {
@@ -40,12 +38,11 @@ bootstrapApplication(AppComponent, {
           syntax: false,
           toolbar: {
             container: QuillEditorToolbar,
-          }
+          },
         },
       }),
-      MatTooltipModule
+      MatTooltipModule,
     ),
-    ResponsiveService
-  ]
-})
-  .catch(err => console.error(err));
+    ResponsiveService,
+  ],
+}).catch((err) => console.error(err));

@@ -1,15 +1,20 @@
-import {ChangeDetectionStrategy, Component, inject, Input} from '@angular/core';
-import {factionList} from "../_static/faction-list";
-import { FormControl, FormGroup, ReactiveFormsModule } from "@angular/forms";
-import {ListItem} from "../_interfaces/list-item";
-import {frameList} from "../_static/frame-list";
-import {rarityList} from "../_static/rarity-list";
-import {typeList} from "../_static/type-list";
-import {cardbackList, whCardbackList} from "../_static/cardback-list";
-import {languageList} from "../_static/language-list";
-import { TranslateService, TranslateModule } from "@ngx-translate/core";
-import {headerList} from "../_static/header-list";
-import {CardForm} from "../_interfaces/card-form";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  Input,
+} from '@angular/core';
+import { factionList } from '../_static/faction-list';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { ListItem } from '../_interfaces/list-item';
+import { frameList } from '../_static/frame-list';
+import { rarityList } from '../_static/rarity-list';
+import { typeList } from '../_static/type-list';
+import { cardbackList, whCardbackList } from '../_static/cardback-list';
+import { languageList } from '../_static/language-list';
+import { TranslateService, TranslateModule } from '@ngx-translate/core';
+import { headerList } from '../_static/header-list';
+import { CardForm } from '../_interfaces/card-form';
 import { GetFormControlPipe } from '../_pipes/get-form-control.pipe';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { TextEditorComponent } from '../text-editor/text-editor.component';
@@ -19,20 +24,32 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { TextButtonComponent } from '../text-button/text-button.component';
 
 @Component({
-    selector: 'app-card-settings',
-    templateUrl: './card-settings.component.html',
-    styleUrls: ['./card-settings.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
-    imports: [ReactiveFormsModule, TextButtonComponent, MatTooltipModule, IconButtonComponent, NgIf, NgOptimizedImage, TextEditorComponent, ClipboardModule, TranslateModule, GetFormControlPipe]
+  selector: 'app-card-settings',
+  templateUrl: './card-settings.component.html',
+  styleUrls: ['./card-settings.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
+  imports: [
+    ReactiveFormsModule,
+    TextButtonComponent,
+    MatTooltipModule,
+    IconButtonComponent,
+    NgIf,
+    NgOptimizedImage,
+    TextEditorComponent,
+    ClipboardModule,
+    TranslateModule,
+    GetFormControlPipe,
+  ],
 })
 export class CardSettingsComponent {
-
   translateService = inject(TranslateService);
 
   @Input() formatControl!: FormControl<string>;
   @Input() cardForm!: FormGroup<CardForm>;
-  languageControl: FormControl<string> = new FormControl<string>('en', { nonNullable: true });
+  languageControl: FormControl<string> = new FormControl<string>('en', {
+    nonNullable: true,
+  });
 
   languageList = languageList;
   headerList = headerList;
@@ -96,15 +113,21 @@ export class CardSettingsComponent {
     this.cardForm.get('name')?.setValue('Благословение');
     this.cardForm.get('categories')?.setValue('1 уровень');
     this.cardForm.get('showStats')?.setValue(false);
-    this.cardForm.get('description')?.setValue(
-      '<p class="ql-align-justify ql-indent-1"><strong>Время накладвания:</strong> 1 действие.</p>' +
-      '<p class="ql-align-justify ql-indent-1"><strong>Дистанция:</strong> 30 футов.</p>' +
-      '<p class="ql-align-justify ql-indent-1"><strong>Компоненты:</strong> В, С, М (капля святой воды).</p>' +
-      '<p class="ql-align-justify ql-indent-1"><strong>Длительность:</strong> концентрация (до 1 минуты).</p>' +
-      '<p class="ql-align-justify ql-indent-1">Вы благословляете до трёх существ на свой выбор в пределах дистанции. До окончания заклинания цель, совершая бросок атаки или спасбросок, может добавить d4 к результату броска.</p>' +
-      '<p class="ql-align-justify ql-indent-1"><strong>На высоких уровнях:</strong> одно дополнительное целевое существо за каждый уровень ячейки выше первого.</p>'
-    );
-    this.cardForm.get('keywords')?.setValue('<p class="ql-align-center"><strong>Школа Очарования</strong></p>');
+    this.cardForm
+      .get('description')
+      ?.setValue(
+        '<p class="ql-align-justify ql-indent-1"><strong>Время накладвания:</strong> 1 действие.</p>' +
+          '<p class="ql-align-justify ql-indent-1"><strong>Дистанция:</strong> 30 футов.</p>' +
+          '<p class="ql-align-justify ql-indent-1"><strong>Компоненты:</strong> В, С, М (капля святой воды).</p>' +
+          '<p class="ql-align-justify ql-indent-1"><strong>Длительность:</strong> концентрация (до 1 минуты).</p>' +
+          '<p class="ql-align-justify ql-indent-1">Вы благословляете до трёх существ на свой выбор в пределах дистанции. До окончания заклинания цель, совершая бросок атаки или спасбросок, может добавить d4 к результату броска.</p>' +
+          '<p class="ql-align-justify ql-indent-1"><strong>На высоких уровнях:</strong> одно дополнительное целевое существо за каждый уровень ячейки выше первого.</p>',
+      );
+    this.cardForm
+      .get('keywords')
+      ?.setValue(
+        '<p class="ql-align-center"><strong>Школа Очарования</strong></p>',
+      );
     this.cardForm.get('flavourText')?.setValue('');
   }
 
@@ -125,16 +148,18 @@ export class CardSettingsComponent {
     this.cardForm.get('INT')?.setValue(10);
     this.cardForm.get('WIS')?.setValue(10);
     this.cardForm.get('CHA')?.setValue(10);
-    this.cardForm.get('description')?.setValue(
-      '<p></p>' +
-      '<p class="ql-align-justify ql-indent-1"><strong>Скорость:</strong> 30 футов.</p>' +
-      '<p class="ql-align-justify ql-indent-1"><strong>Чувства:</strong> Внимательность (10).</p>' +
-      '<p class="ql-align-justify ql-indent-1"><strong>Языки:</strong> 1 любой (Общий).</p>' +
-      '<p class="ql-align-justify ql-indent-1"><strong>Опасность:</strong> 0 (10 опыта).</p>' +
-      '<p></p>' +
-      '<strong><strong>Действия</strong></strong>' +
-      '<p class="ql-align-justify ql-indent-1"><strong>Удар дубиной:</strong> рукопашная атака оружием, +2 к попаданию, досягаемость 5 футов, 1 цель, урон: 1d4 дробящий.'
-    );
+    this.cardForm
+      .get('description')
+      ?.setValue(
+        '<p></p>' +
+          '<p class="ql-align-justify ql-indent-1"><strong>Скорость:</strong> 30 футов.</p>' +
+          '<p class="ql-align-justify ql-indent-1"><strong>Чувства:</strong> Внимательность (10).</p>' +
+          '<p class="ql-align-justify ql-indent-1"><strong>Языки:</strong> 1 любой (Общий).</p>' +
+          '<p class="ql-align-justify ql-indent-1"><strong>Опасность:</strong> 0 (10 опыта).</p>' +
+          '<p></p>' +
+          '<strong><strong>Действия</strong></strong>' +
+          '<p class="ql-align-justify ql-indent-1"><strong>Удар дубиной:</strong> рукопашная атака оружием, +2 к попаданию, досягаемость 5 футов, 1 цель, урон: 1d4 дробящий.',
+      );
     this.cardForm.get('keywords')?.setValue('');
     this.cardForm.get('flavourText')?.setValue('');
   }
@@ -148,5 +173,4 @@ export class CardSettingsComponent {
     this.cardForm.get('type')?.setValue('');
     this.cardForm.get('provision')?.setValue('');
   }
-
 }

@@ -8,8 +8,8 @@ describe('IconButtonComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [IconButtonComponent]
-});
+      imports: [IconButtonComponent],
+    });
     fixture = TestBed.createComponent(IconButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

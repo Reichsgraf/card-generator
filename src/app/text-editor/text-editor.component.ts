@@ -1,21 +1,16 @@
-import {Component, Input} from '@angular/core';
-import {QuillEditorComponent} from "ngx-quill";
-import {FormControl, ReactiveFormsModule} from "@angular/forms";
-import {NgOptimizedImage} from "@angular/common";
+import { Component, Input } from '@angular/core';
+import { QuillEditorComponent } from 'ngx-quill';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-text-editor',
   standalone: true,
-  imports: [
-    QuillEditorComponent,
-    ReactiveFormsModule,
-    NgOptimizedImage
-  ],
+  imports: [QuillEditorComponent, ReactiveFormsModule, NgOptimizedImage],
   templateUrl: './text-editor.component.html',
-  styleUrl: './text-editor.component.scss'
+  styleUrl: './text-editor.component.scss',
 })
 export class TextEditorComponent {
-
   @Input() control!: FormControl<string>;
   quillEditorRef: any;
 
@@ -28,10 +23,11 @@ export class TextEditorComponent {
   }
 
   clear() {
-    this.quillEditorRef.removeFormat(0, this.quillEditorRef.getLength(), 'user');
+    this.quillEditorRef.removeFormat(
+      0,
+      this.quillEditorRef.getLength(),
+      'user',
+    );
     this.quillEditorRef.deleteText(0, this.quillEditorRef.getLength(), 'user');
   }
-
 }
-
-

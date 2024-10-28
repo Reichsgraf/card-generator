@@ -1,6 +1,6 @@
-import {inject, Injectable} from "@angular/core";
-import {Subject} from "rxjs";
-import {BreakpointObserver, Breakpoints} from "@angular/cdk/layout";
+import { inject, Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 export type ResponsiveFormat = 'DESKTOP' | 'TABLET' | 'MOBILE';
 
@@ -8,7 +8,6 @@ export type ResponsiveFormat = 'DESKTOP' | 'TABLET' | 'MOBILE';
   providedIn: 'root',
 })
 export class ResponsiveService {
-
   private responsive = inject(BreakpointObserver);
 
   responsiveChangeSubject = new Subject<ResponsiveFormat>();
@@ -17,29 +16,31 @@ export class ResponsiveService {
   responsiveFormat!: ResponsiveFormat;
 
   constructor() {
-    this.responsive.observe([
-      Breakpoints.XLarge,
-      Breakpoints.Large,
-      Breakpoints.Medium,
-      Breakpoints.Small,
-      Breakpoints.XSmall
-    ]).subscribe(result => {
-      const breakpoints = result.breakpoints;
+    this.responsive
+      .observe([
+        Breakpoints.XLarge,
+        Breakpoints.Large,
+        Breakpoints.Medium,
+        Breakpoints.Small,
+        Breakpoints.XSmall,
+      ])
+      .subscribe((result) => {
+        const breakpoints = result.breakpoints;
 
-      if (breakpoints[Breakpoints.XLarge] || breakpoints[Breakpoints.Large]) {
+        if (breakpoints[Breakpoints.XLarge] || breakpoints[Breakpoints.Large]) {
+          return this.checkResponsiveFormat('DESKTOP');
+        }
+
+        if (breakpoints[Breakpoints.Medium]) {
+          return this.checkResponsiveFormat('TABLET');
+        }
+
+        if (breakpoints[Breakpoints.Small] || breakpoints[Breakpoints.XSmall]) {
+          return this.checkResponsiveFormat('MOBILE');
+        }
+
         return this.checkResponsiveFormat('DESKTOP');
-      }
-
-      if (breakpoints[Breakpoints.Medium]) {
-        return this.checkResponsiveFormat('TABLET');
-      }
-
-      if (breakpoints[Breakpoints.Small] || breakpoints[Breakpoints.XSmall]) {
-        return this.checkResponsiveFormat('MOBILE');
-      }
-
-      return this.checkResponsiveFormat('DESKTOP');
-    });
+      });
   }
 
   checkResponsiveFormat(format: ResponsiveFormat) {
@@ -84,5 +85,4 @@ export class ResponsiveService {
   get isMobile(): boolean {
     return this.responsiveFormat === 'MOBILE';
   }
-
 }

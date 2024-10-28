@@ -8,8 +8,8 @@ describe('TextButtonComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-    imports: [TextButtonComponent]
-});
+      imports: [TextButtonComponent],
+    });
     fixture = TestBed.createComponent(TextButtonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
