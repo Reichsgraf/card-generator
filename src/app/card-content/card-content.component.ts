@@ -1,8 +1,8 @@
-import {Component, inject, Input, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
-import {LangChangeEvent, TranslateService} from "@ngx-translate/core";
-import {map, Observable, startWith} from "rxjs";
-import {CardForm} from "../_interfaces/card-form";
+import { Component, inject, Input, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+import { map, Observable, startWith } from 'rxjs';
+import { CardForm } from '../_interfaces/card-form';
 import { GetFooterBackgroundPipe } from '../_pipes/get-footer-background.pipe';
 import { GetContentBackgroundPipe } from '../_pipes/get-content-background.pipe';
 import { GetHeaderPipe } from '../_pipes/get-header.pipe';
@@ -12,14 +12,23 @@ import { GetFactionHeaderPipe } from '../_pipes/get-faction-header.pipe';
 import { NgClass, NgOptimizedImage, AsyncPipe } from '@angular/common';
 
 @Component({
-    selector: 'app-card-content',
-    templateUrl: './card-content.component.html',
-    styleUrls: ['./card-content.component.scss'],
-    standalone: true,
-    imports: [NgClass, NgOptimizedImage, AsyncPipe, GetFactionHeaderPipe, GetSubFactionHeaderPipe, GetCardHeightPipe, GetHeaderPipe, GetContentBackgroundPipe, GetFooterBackgroundPipe]
+  selector: 'app-card-content',
+  templateUrl: './card-content.component.html',
+  styleUrls: ['./card-content.component.scss'],
+  standalone: true,
+  imports: [
+    NgClass,
+    NgOptimizedImage,
+    AsyncPipe,
+    GetFactionHeaderPipe,
+    GetSubFactionHeaderPipe,
+    GetCardHeightPipe,
+    GetHeaderPipe,
+    GetContentBackgroundPipe,
+    GetFooterBackgroundPipe,
+  ],
 })
 export class CardContentComponent implements OnInit {
-
   translateService = inject(TranslateService);
 
   @Input() formatControl!: FormControl<string>;
@@ -61,5 +70,4 @@ export class CardContentComponent implements OnInit {
     const bonus = Math.abs(stat - 10) / 2;
     return `${stat}<br>(${positive ? '+' : '−'}${positive ? Math.floor(bonus) : Math.round(bonus)})`;
   }
-
 }

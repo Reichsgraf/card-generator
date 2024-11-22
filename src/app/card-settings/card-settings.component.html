@@ -103,10 +103,12 @@
           <input type="file" [style.display]="'none'" (change)="uploadCardShirt($event)" #fileUpload accept="image/*">
         </app-text-button>
         @for (cardback of cardbackList; track cardback; let index = $index) {
-          <app-icon-button *ngIf="index" [item]="cardback" [imageHeight]="30" [imageWidth]="25"
-                           (click)="setCardback(cardback)"
-                           [isActive]="cardback.name === cardForm.value.cardback">
-          </app-icon-button>
+          @if (index) {
+            <app-icon-button [item]="cardback" [imageHeight]="30" [imageWidth]="25"
+                             (click)="setCardback(cardback)"
+                             [isActive]="cardback.name === cardForm.value.cardback">
+            </app-icon-button>
+          }
         }
       </div>
     </div>
@@ -115,10 +117,12 @@
       <h4>{{ 'settings.type' | translate }}</h4>
       <div class="button-list">
         @for (type of typeList; track type) {
-          <app-icon-button *ngIf="type.name !== 'N'" [item]="type"
-                           (click)="setType(type)"
-                           [isActive]="type.name === cardForm.value.type">
-          </app-icon-button>
+          @if (type.name !== 'N') {
+            <app-icon-button [item]="type"
+                             (click)="setType(type)"
+                             [isActive]="type.name === cardForm.value.type">
+            </app-icon-button>
+          }
         }
       </div>
     </div>

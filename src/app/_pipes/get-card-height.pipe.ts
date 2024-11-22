@@ -1,14 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {formatList} from "../_static/format-list";
+import { formatList } from '../_static/format-list';
 
 @Pipe({
-    name: 'getCardHeight',
-    standalone: true
+  name: 'getCardHeight',
+  standalone: true,
 })
 export class GetCardHeightPipe implements PipeTransform {
-
   transform(targetFormat: string): string {
-    return formatList.find(format => format.name === targetFormat)?.value || '';
+    return (
+      formatList.find((format) => format.name === targetFormat)?.value || ''
+    );
   }
-
 }

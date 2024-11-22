@@ -1,23 +1,27 @@
-import {Component, ElementRef, inject, ViewChild} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import { Component, ElementRef, inject, ViewChild } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import * as htmlToImage from 'html-to-image';
-import {TranslateService} from "@ngx-translate/core";
-import {CardForm} from "./_interfaces/card-form";
+import { TranslateService } from '@ngx-translate/core';
+import { CardForm } from './_interfaces/card-form';
 import { TextButtonComponent } from './text-button/text-button.component';
 import { CardContentComponent } from './card-content/card-content.component';
 import { CardShirtComponent } from './card-shirt/card-shirt.component';
 import { CardSettingsComponent } from './card-settings/card-settings.component';
-import {ResponsiveService} from "./_modules/responsive/responsive.service";
+import { ResponsiveService } from './_modules/responsive/responsive.service';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss'],
-    standalone: true,
-    imports: [CardSettingsComponent, CardShirtComponent, CardContentComponent, TextButtonComponent]
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss'],
+  standalone: true,
+  imports: [
+    CardSettingsComponent,
+    CardShirtComponent,
+    CardContentComponent,
+    TextButtonComponent,
+  ],
 })
 export class AppComponent {
-
   responsiveService = inject(ResponsiveService);
   translateService = inject(TranslateService);
 
@@ -31,7 +35,9 @@ export class AppComponent {
     this.responsiveService.checkResponsiveFormat('DESKTOP');
     this.translateService.use(this.translateService.defaultLang);
 
-    this.formatControl = new FormControl<string>('63,5 x 88', { nonNullable: true });
+    this.formatControl = new FormControl<string>('63,5 x 88', {
+      nonNullable: true,
+    });
 
     this.cardForm = new FormGroup<CardForm>({
       header: new FormControl<string>('', { nonNullable: true }),
@@ -41,12 +47,12 @@ export class AppComponent {
       rarity: new FormControl<string>('common', { nonNullable: true }),
 
       image: new FormControl<any>(null),
-      power:  new FormControl<string>('1', { nonNullable: true }),
-      armor:  new FormControl<string>('', { nonNullable: true }),
-      provision:  new FormControl<string>('6', { nonNullable: true }),
-      fontSize:  new FormControl<number>(16, { nonNullable: true }),
-      cardback:  new FormControl<string>('', { nonNullable: true }),
-      type:  new FormControl<string>('unit', { nonNullable: true }),
+      power: new FormControl<string>('1', { nonNullable: true }),
+      armor: new FormControl<string>('', { nonNullable: true }),
+      provision: new FormControl<string>('6', { nonNullable: true }),
+      fontSize: new FormControl<number>(16, { nonNullable: true }),
+      cardback: new FormControl<string>('', { nonNullable: true }),
+      type: new FormControl<string>('unit', { nonNullable: true }),
 
       name: new FormControl<string>('Card Name', { nonNullable: true }),
       categories: new FormControl<string>('Human', { nonNullable: true }),
@@ -59,25 +65,25 @@ export class AppComponent {
       CHA: new FormControl<number>(10, { nonNullable: true }),
       description: new FormControl<string>(
         '<p class="ql-align-justify ql-indent-1"><strong>Stat:</strong> Dexterity</p><p class="ql-align-justify">Additional text.</p>',
-        { nonNullable: true }
+        { nonNullable: true },
       ),
       keywords: new FormControl<string>(
         '<p class="ql-align-center"><strong>Keyword1</strong>, <strong>Keyword2</strong></p>',
-        { nonNullable: true }
+        { nonNullable: true },
       ),
       flavourText: new FormControl<string>(
         '<p><i>Up for a round of Gwent?</i></p>',
-        { nonNullable: true }
+        { nonNullable: true },
       ),
     });
   }
 
   download(elementName: string) {
-    let nativeElement;
-    nativeElement = this.getNativeElement(elementName);
+    const nativeElement = this.getNativeElement(elementName);
 
-    htmlToImage.toPng(nativeElement)
-      .then(canvas => {
+    htmlToImage
+      .toPng(nativeElement)
+      .then((canvas) => {
         const downloadLink = document.createElement('a');
         downloadLink.href = canvas;
         downloadLink.download = `${this.cardForm.value.name || 'card'}.png`;
@@ -98,5 +104,4 @@ export class AppComponent {
       return this.content.nativeElement;
     }
   }
-
 }

@@ -1,4 +1,4 @@
-import {ListItem} from "../_interfaces/list-item";
+import { ListItem } from '../_interfaces/list-item';
 
 export const typeList: ListItem[] = [
   { name: '', icon: '' },
