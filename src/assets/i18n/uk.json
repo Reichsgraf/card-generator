@@ -1,0 +1,44 @@
+{
+  "settings": {
+    "language": "Мова",
+    "header": "Заголовок",
+    "faction": "Фракція",
+    "second-faction": "Другорядна фракція",
+    "frame": "Рамка",
+    "rarity": "Рідкість",
+    "cardback": "Сорочка",
+    "load-image": "Завантажити",
+    "type": "Тип",
+    "font-size": "Розмір",
+
+    "spec-symbols": "Спеціальні символи",
+    "tab-char": "Табуляція",
+    "multiplication-sign": "Множення",
+    "action-symbol": "Дія"
+  },
+  "content": {
+    "name": "Ім'я карти",
+    "categories": "Категорії",
+    "stats": "Характеристики",
+    "stat-name": {
+      "strength": "СИЛ",
+      "dexterity": "СПР",
+      "constitution": "СТА",
+      "intellect": "ІНТ",
+      "wisdom": "МУД",
+      "charisma": "ХАР"
+    },
+    "description": "Опис",
+    "keywords": "Ключові слова",
+    "flavour-text": "Додатковий текст",
+    "formats": "Формати",
+    "templates": "Шаблони",
+    "spell": "Чара",
+    "npc": "Персонаж"
+  },
+  "result": {
+    "card-shirt": "Завантажити сорочку",
+    "full-card": "Завантажити",
+    "card-content": "Завантажити лицьову сторонк"
+  }
+}
