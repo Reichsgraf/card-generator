@@ -21,8 +21,8 @@
     </div>
 
     <div class="download-data-buttons">
-      <app-text-button [text]="'Download Card Data'" (click)="downloadJSON()"></app-text-button>
-      <app-text-button [text]="'Upload Card Data'" (click)="fileUpload.click()">
+      <app-text-button [text]="'result.download-data'" (click)="downloadJSON()"></app-text-button>
+      <app-text-button [text]="'result.upload-data'" (click)="fileUpload.click()">
         <input type="file" [style.display]="'none'" (change)="uploadJSON($event)" #fileUpload accept="application/JSON">
       </app-text-button>
     </div>
