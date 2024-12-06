@@ -1,5 +1,4 @@
 import {
-  ChangeDetectionStrategy,
   Component,
   inject,
   Input,
@@ -27,7 +26,6 @@ import { TextButtonComponent } from '../text-button/text-button.component';
   selector: 'app-card-settings',
   templateUrl: './card-settings.component.html',
   styleUrls: ['./card-settings.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
   imports: [
     ReactiveFormsModule,

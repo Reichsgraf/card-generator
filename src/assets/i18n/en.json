@@ -39,6 +39,8 @@
   "result": {
     "card-shirt": "Download Card Shirt",
     "full-card": "Download",
-    "card-content": "Download Card Content"
+    "card-content": "Download Card Content",
+    "download-data": "Download Card Data",
+    "upload-data": "Upload Card Data"
   }
 }
