@@ -13,10 +13,19 @@
     </div>
   </div>
 
-  <div class="download-buttons">
-    <app-text-button [text]="'result.card-shirt'" (click)="download('shirt')"></app-text-button>
-    <app-text-button [text]="'result.full-card'" (click)="download('card')"></app-text-button>
-    <app-text-button [text]="'result.card-content'" (click)="download('content')"></app-text-button>
+  <div class="button-container">
+    <div class="download-buttons">
+      <app-text-button [text]="'result.card-shirt'" (click)="download('shirt')"></app-text-button>
+      <app-text-button [text]="'result.full-card'" (click)="download('card')"></app-text-button>
+      <app-text-button [text]="'result.card-content'" (click)="download('content')"></app-text-button>
+    </div>
+
+    <div class="download-data-buttons">
+      <app-text-button [text]="'Download Card Data'" (click)="downloadJSON()"></app-text-button>
+      <app-text-button [text]="'Upload Card Data'" (click)="fileUpload.click()">
+        <input type="file" [style.display]="'none'" (change)="uploadJSON($event)" #fileUpload accept="application/JSON">
+      </app-text-button>
+    </div>
   </div>
 </div>
 

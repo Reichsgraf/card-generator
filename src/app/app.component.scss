@@ -33,10 +33,23 @@
   flex-direction: row;
 }
 
-.download-buttons {
+.button-container {
   display: flex;
-  justify-content: space-between;
-  width: 650px;
+  flex-direction: column;
+  gap: 20px;
+
+  .download-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 650px;
+  }
+
+  .download-data-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 650px;
+  }
 }
 
 .footer {

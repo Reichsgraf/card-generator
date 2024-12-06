@@ -104,4 +104,33 @@ export class AppComponent {
       return this.content.nativeElement;
     }
   }
+
+  downloadJSON() {
+    const sJson = JSON.stringify(this.cardForm.value);
+    const element = document.createElement('a');
+    element.setAttribute(
+      'href',
+      'data:text/json;charset=UTF-8,' + encodeURIComponent(sJson),
+    );
+    element.setAttribute(
+      'download',
+      `${this.cardForm.get('name')?.value}.json`,
+    );
+    element.style.display = 'none';
+    document.body.appendChild(element);
+    element.click();
+    document.body.removeChild(element);
+  }
+
+  uploadJSON(event: any) {
+    const selectedFile = event.target.files[0];
+    const fileReader = new FileReader();
+    fileReader.readAsText(selectedFile, 'UTF-8');
+    fileReader.onload = () => {
+      this.cardForm.patchValue(JSON.parse(fileReader.result as string));
+    };
+    /*fileReader.onerror = (error) => {
+      console.log(error);
+    }*/
+  }
 }
