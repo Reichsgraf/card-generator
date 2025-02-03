@@ -90,10 +90,11 @@ export class CardSettingsComponent {
     this.cardForm.get(fieldName)?.setValue(newValue);
   }
 
-  uploadCardShirt(event: any) {
+  uploadCardShirt(event: Event) {
     const reader = new FileReader();
-    if (event.target.files?.length > 0) {
-      const file = event.target.files[0];
+    const target = event.target as HTMLInputElement;
+    if (target.files && target.files.length > 0) {
+      const file = target?.files[0];
       reader.readAsDataURL(file);
       reader.onload = () => {
         this.setFormField('image', reader.result);

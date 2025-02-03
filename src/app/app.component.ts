@@ -8,6 +8,8 @@ import { CardContentComponent } from './card-content/card-content.component';
 import { CardShirtComponent } from './card-shirt/card-shirt.component';
 import { CardSettingsComponent } from './card-settings/card-settings.component';
 import { ResponsiveService } from './_modules/responsive/responsive.service';
+import { DesktopDirective } from './_modules/responsive/desktop.directive';
+import { MobileDirective } from './_modules/responsive/mobile.directive';
 
 @Component({
   selector: 'app-root',
@@ -19,6 +21,8 @@ import { ResponsiveService } from './_modules/responsive/responsive.service';
     CardShirtComponent,
     CardContentComponent,
     TextButtonComponent,
+    DesktopDirective,
+    MobileDirective,
   ],
 })
 export class AppComponent {
