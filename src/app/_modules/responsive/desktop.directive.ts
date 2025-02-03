@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
 import { ResponsiveService } from './responsive.service';
 
 @Directive({
-  selector: '[desktop]',
+  selector: '[appDesktop]',
   standalone: true,
 })
 export class DesktopDirective implements AfterViewInit, OnDestroy {

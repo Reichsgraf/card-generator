@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
 import { ResponsiveService } from './responsive.service';
 
 @Directive({
-  selector: '[mobile]',
+  selector: '[appMobile]',
   standalone: true,
 })
 export class MobileDirective implements AfterViewInit, OnDestroy {
