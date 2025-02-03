@@ -1,8 +1,4 @@
-import {
-  Component,
-  inject,
-  Input,
-} from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { factionList } from '../_static/faction-list';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { ListItem } from '../_interfaces/list-item';
