@@ -55,7 +55,7 @@ export class CardContentComponent implements OnInit {
       const CHA = this.cardForm.value.CHA || 0;
       description = `
         <table>
-        <tr><th><b>СИЛ</b></th><th><b>ЛОВ</th><th><b>ТЕЛ</b></th><th><b>ИНТ</b></th><th><b>МДР</b></th><th><b>ХАР</b></th></tr>
+        <tr><th><b>${this.getCharacteristicTranslation("strength")}</b></th><th><b>${this.getCharacteristicTranslation("dexterity")}</th><th><b>${this.getCharacteristicTranslation("constitution")}</b></th><th><b>${this.getCharacteristicTranslation("intellect")}</b></th><th><b>${this.getCharacteristicTranslation("wisdom")}</b></th><th><b>${this.getCharacteristicTranslation("charisma")}</b></th></tr>
         <tr><td>${this.getStat(STR)}</td><td>${this.getStat(DEX)}</td><td>${this.getStat(CON)}</td><td>${this.getStat(INT)}</td><td>${this.getStat(WIS)}</td><td>${this.getStat(CHA)}</td></tr>
         </table>\n`;
     }
@@ -69,5 +69,9 @@ export class CardContentComponent implements OnInit {
     const positive = stat >= 10;
     const bonus = Math.abs(stat - 10) / 2;
     return `${stat}<br>(${positive ? '+' : '−'}${positive ? Math.floor(bonus) : Math.round(bonus)})`;
+  }
+
+  getCharacteristicTranslation(str: string) {
+    return this.translateService.instant(`content.stat-name.${str}`);
   }
 }
